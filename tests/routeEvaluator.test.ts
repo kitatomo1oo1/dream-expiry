@@ -116,12 +116,21 @@ describe("YouTuber — DYNAMICな年齢ゲート(収益受取のみ年齢依存)
   });
 });
 
-describe("プロサッカー選手 — 2026年4月改正規則", () => {
+describe("プロサッカー選手 — 契約締結そのものに年齢上限はないが、育成年代からの入口は実質22歳前後で閉じる", () => {
   it("15歳未満はFUTURE", () => {
     expect(statusOf("pro_footballer", 14)).toBe("FUTURE");
   });
-  it("15歳以上はOPEN、上限年齢なし", () => {
+  it("15〜22歳は育成年代ルートも契約締結もOPEN", () => {
     expect(statusOf("pro_footballer", 15)).toBe("OPEN");
-    expect(statusOf("pro_footballer", 58)).toBe("OPEN");
+    expect(statusOf("pro_footballer", 22)).toBe("OPEN");
+  });
+  it("23歳以上はゼロから始める育成年代ルートがROUTE_CLOSEDになり、全体もROUTE_CLOSED(契約締結ステップ単体は年齢上限なしのまま)", () => {
+    const evaluation = evaluateOccupation(ds, "pro_footballer", 58, REF);
+    expect(evaluation.status).toBe("ROUTE_CLOSED");
+    const youthStep = evaluation.routes[0].steps.find((s) => s.step_id === "step_football_youth_pathway");
+    const contractStep = evaluation.routes[0].steps.find((s) => s.step_id === "step_football_contract");
+    expect(youthStep?.status).toBe("ROUTE_CLOSED");
+    expect(contractStep?.status).toBe("OPEN");
+    expect(contractStep?.expiry_type).toBe("NO_UPPER_DEADLINE_FOUND");
   });
 });

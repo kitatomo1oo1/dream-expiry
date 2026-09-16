@@ -228,6 +228,34 @@ h3.route-name {
   color: var(--text-dim);
 }
 
+.step-caution {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.step-name {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.step-description {
+  flex-basis: 100%;
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.step-confidence-note {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
 .discovery-box {
   background: rgba(232, 179, 74, 0.12);
   border: 1px solid var(--accent);
@@ -254,6 +282,13 @@ h3.route-name {
 .dreamline-transition.dim {
   color: var(--text-dim);
   font-size: 1rem;
+}
+
+.dreamline-caution {
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .dreamline-desc {

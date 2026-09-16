@@ -69,6 +69,13 @@ export interface Rule {
   source_ids: string[];
   /** 年齢スライダーでこのルールが新たに適用された際に表示する発見テキスト */
   discovery_text?: string;
+  /**
+   * 状態を誤読させないための警告文。特に expiry_type が NO_UPPER_DEADLINE_FOUND の場合、
+   * 「上限が見つからない」ことを「簡単・確実」と読み違えないよう、Status表示に常設で添える。
+   * (discovery_text は状態が変化した瞬間だけ出る一時的な発見。caution_textはその状態が
+   * 適用されている間、常に表示する。)
+   */
+  caution_text?: string;
 }
 
 export interface RouteStep {

@@ -5,7 +5,7 @@
     { "id": "route_pro_boxer_standard", "occupation_id": "pro_boxer", "name": "標準ルート(プロテスト+公式戦出場)", "is_standard": true, "step_ids": ["step_boxer_license"] },
     { "id": "route_sumo_standard", "occupation_id": "sumo_wrestler", "name": "標準ルート(新弟子検査)", "is_standard": true, "step_ids": ["step_sumo_shindeshi_kensa"] },
     { "id": "route_sumo_qualified_achievement", "occupation_id": "sumo_wrestler", "name": "代替ルート(有力アマチュア実績者の付出資格)", "is_standard": false, "step_ids": ["step_sumo_fukidashi"] },
-    { "id": "route_pro_footballer_standard", "occupation_id": "pro_footballer", "name": "標準ルート(Jリーグ プロ契約)", "is_standard": true, "step_ids": ["step_football_contract"] },
+    { "id": "route_pro_footballer_standard", "occupation_id": "pro_footballer", "name": "標準ルート(育成年代からJリーグ プロ契約)", "is_standard": true, "step_ids": ["step_football_youth_pathway", "step_football_contract"] },
     { "id": "route_youtuber_standard", "occupation_id": "youtuber", "name": "標準ルート(YouTube Partner Program)", "is_standard": true, "step_ids": ["step_youtuber_ypp_metrics", "step_youtuber_monetization_payout"] },
     { "id": "route_shogi_shoreikai", "occupation_id": "shogi_player", "name": "標準ルート(新進棋士奨励会)", "is_standard": true, "step_ids": ["step_shogi_yondan"] },
     { "id": "route_shogi_pro_exam", "occupation_id": "shogi_player", "name": "代替ルート(プロ編入試験)", "is_standard": false, "step_ids": ["step_shogi_pro_exam"] },
@@ -19,7 +19,8 @@
     { "id": "step_boxer_license", "route_id": "route_pro_boxer_standard", "order": 1, "name": "プロテスト受験・公式戦出場資格の取得", "description": "プロテスト受験可能年齢と、公式戦(試合)出場可能年齢は分離している。", "rule_ids": ["rule_boxer_1", "rule_boxer_2", "rule_boxer_3", "rule_boxer_4"] },
     { "id": "step_sumo_shindeshi_kensa", "route_id": "route_sumo_standard", "order": 1, "name": "新弟子検査(標準ルート)", "description": "日本相撲協会の新弟子検査。標準ルートには年齢上限がある。", "rule_ids": ["rule_sumo_1", "rule_sumo_2", "rule_sumo_3"] },
     { "id": "step_sumo_fukidashi", "route_id": "route_sumo_qualified_achievement", "order": 1, "name": "有力アマチュア実績者の付出資格", "description": "全日本選手権優勝等の有力アマチュア実績を持つ者に対する代替ルート。", "rule_ids": ["rule_sumo_alt_1", "rule_sumo_alt_2"] },
-    { "id": "step_football_contract", "route_id": "route_pro_footballer_standard", "order": 1, "name": "プロA契約の締結", "description": "Jリーグ規約に基づくプロ契約。", "rule_ids": ["rule_football_1", "rule_football_2"] },
+    { "id": "step_football_youth_pathway", "route_id": "route_pro_footballer_standard", "order": 1, "name": "育成年代からの参入(J下部組織/高校/大学サッカー)", "description": "Jリーグ加盟クラブの下部組織(ジュニアユースU-15・ユースU-18)セレクション、高校サッカー、大学サッカーなど、プロ契約に至る現実的な入口。ここが実質的な年齢のボトルネックであり、契約締結そのものの年齢上限とは別軸。", "rule_ids": ["rule_football_youth_1", "rule_football_youth_2"] },
+    { "id": "step_football_contract", "route_id": "route_pro_footballer_standard", "order": 2, "name": "プロA契約の締結", "description": "Jリーグ規約に基づくプロ契約。この地点自体には年齢上限がないが、通常は上記の育成年代ルートを経て到達する。", "rule_ids": ["rule_football_1", "rule_football_2"] },
     { "id": "step_youtuber_ypp_metrics", "route_id": "route_youtuber_standard", "order": 1, "name": "YPP参加基準(登録者数/視聴時間)の達成", "description": "登録者数・視聴時間等の指標条件。年齢とは無関係だが、基準自体は将来変更される(DYNAMIC)。", "rule_ids": ["rule_youtuber_metrics_current", "rule_youtuber_metrics_2027"] },
     { "id": "step_youtuber_monetization_payout", "route_id": "route_youtuber_standard", "order": 2, "name": "広告収益の受取(AdSenseアカウント)", "description": "収益を実際に受け取るための年齢・保護者条件。", "rule_ids": ["rule_youtuber_payout_minor", "rule_youtuber_payout_adult"] },
     { "id": "step_shogi_yondan", "route_id": "route_shogi_shoreikai", "order": 1, "name": "四段昇段(プロ入り)", "description": "新進棋士奨励会からの四段昇段。DREAM LINEそのもの。", "rule_ids": ["rule_shogi_1", "rule_shogi_2", "rule_shogi_3"] },
@@ -37,7 +38,8 @@
       "status": "OPEN",
       "expiry_type": "NO_UPPER_DEADLINE_FOUND",
       "source_ids": ["src_doctor_law", "src_doctor_secondary"],
-      "discovery_text": "年齢による正式な上限が見つかりません"
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
     },
     {
       "id": "rule_jra_1",
@@ -155,6 +157,26 @@
       "discovery_text": "ただし別の入口があります"
     },
     {
+      "id": "rule_football_youth_1",
+      "step_id": "step_football_youth_pathway",
+      "description": "Jリーグ下部組織(ジュニアユースU-15・ユースU-18)のセレクション、高校サッカー、大学サッカーなど、プロ契約に至る現実的な入口が開いている年代です。",
+      "age_condition": { "kind": "lte", "age": 22 },
+      "status": "OPEN",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_football_youth_pathway"],
+      "discovery_text": "まだ開いている入口があります"
+    },
+    {
+      "id": "rule_football_youth_2",
+      "step_id": "step_football_youth_pathway",
+      "description": "調査した範囲では、大学サッカー(卒業は概ね22歳前後)を最後に、ゼロから始めて到達できる確立された育成ルートは見当たりません。これは大学年代までの構造を近似した数値であり、厳密な制度上の年齢上限ではありません。高校からサッカーを本格的に始めて数年でプロ入りした例(西部洋平氏)はありますが、極めて例外的です。",
+      "age_condition": { "kind": "gte", "age": 23 },
+      "status": "ROUTE_CLOSED",
+      "expiry_type": "HARD",
+      "source_ids": ["src_football_youth_pathway"],
+      "discovery_text": "この入口は閉じました"
+    },
+    {
       "id": "rule_football_1",
       "step_id": "step_football_contract",
       "description": "満15歳に達していないため、まだプロ契約の対象になりません。",
@@ -172,7 +194,8 @@
       "expiry_type": "NO_UPPER_DEADLINE_FOUND",
       "applicable_cycle": "2026年4月以降",
       "source_ids": ["src_football_jleague_2026", "src_football_miura"],
-      "discovery_text": "年齢による正式な上限が見つかりません"
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
     },
     {
       "id": "rule_youtuber_metrics_current",
@@ -211,7 +234,8 @@
       "status": "OPEN",
       "expiry_type": "NO_UPPER_DEADLINE_FOUND",
       "source_ids": ["src_youtube_ypp_help"],
-      "discovery_text": "年齢による正式な上限が見つかりません"
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
     },
     {
       "id": "rule_shogi_1",
@@ -290,7 +314,8 @@
       "status": "OPEN",
       "expiry_type": "NO_UPPER_DEADLINE_FOUND",
       "source_ids": ["src_manga_no_license"],
-      "discovery_text": "年齢による正式な上限が見つかりません"
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
     },
     {
       "id": "rule_actor_1",
@@ -299,8 +324,9 @@
       "age_condition": { "kind": "any" },
       "status": "OPEN",
       "expiry_type": "NO_UPPER_DEADLINE_FOUND",
-      "source_ids": ["src_actor_no_license", "src_actor_labor_law_minors"],
-      "discovery_text": "年齢による正式な上限が見つかりません"
+      "source_ids": ["src_actor_no_license", "src_actor_labor_law_minors", "src_actor_lily_franky"],
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
     }
   ]
 }

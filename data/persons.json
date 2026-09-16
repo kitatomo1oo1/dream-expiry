@@ -9,5 +9,6 @@
   { "id": "p_amami_yuki", "name": "天海祐希", "occupation_id": "takarazuka_performer", "summary": "宝塚歌劇団73期生。史上最年少25歳で月組トップスター就任後、退団して女優に転身。", "source_ids": ["src_takarazuka_amami"] },
   { "id": "p_hikakin", "name": "HIKAKIN", "occupation_id": "youtuber", "summary": "活動休止を発表し、約1週間後に活動を再開した実例。", "source_ids": ["src_youtube_hikakin_hiatus"] },
   { "id": "p_togashi_yoshihiro", "name": "冨樫義博", "occupation_id": "manga_artist", "summary": "『HUNTER×HUNTER』作者。連載の再開と休載を繰り返している。", "source_ids": ["src_manga_togashi"] },
-  { "id": "p_ashida_mana", "name": "芦田愛菜", "occupation_id": "actor", "summary": "3歳から芸能活動、2009年子役デビュー。子役から成人女優へ継続的なキャリアを積む。", "source_ids": ["src_actor_ashida"] }
+  { "id": "p_ashida_mana", "name": "芦田愛菜", "occupation_id": "actor", "summary": "3歳から芸能活動、2009年子役デビュー。子役から成人女優へ継続的なキャリアを積む。", "source_ids": ["src_actor_ashida"] },
+  { "id": "p_lily_franky", "name": "リリー・フランキー", "occupation_id": "actor", "summary": "40代で俳優デビュー。ブルーリボン賞新人賞を受賞した実例。", "source_ids": ["src_actor_lily_franky"] }
 ]

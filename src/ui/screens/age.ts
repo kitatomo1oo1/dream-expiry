@@ -1,8 +1,20 @@
 import { el } from "../dom";
 import type { Store } from "../../state";
+import type { DataSet, Rule } from "../../types";
 import { evaluateOccupation } from "../../engine/routeEvaluator";
 import { computeDiscoveries } from "../../engine/dreamLineEngine";
 import { statusLabel, expiryLabel } from "../labels";
+
+/** ルールの根拠となる出典のうち、最も確度が低いものを表示用に返す(近似値・要検証であることを隠さない)。 */
+function lowestConfidenceNote(ds: DataSet, rule: Rule | null): string | null {
+  if (!rule) return null;
+  const order = { low: 0, unknown: 1, medium: 2, high: 3 } as const;
+  const sources = rule.source_ids.map((id) => ds.sources.find((s) => s.id === id)).filter((s) => Boolean(s));
+  if (sources.length === 0) return null;
+  const lowest = sources.reduce((worst, cur) => (order[cur!.confidence] < order[worst!.confidence] ? cur : worst));
+  if (lowest!.confidence === "high") return null;
+  return `確度:${lowest!.confidence}(${lowest!.note ?? lowest!.title})`;
+}
 
 /** DISTANCE(現在地の提示) + DISCOVER(年齢スライダーで何が変わるかを発見する)を担う画面。 */
 export function renderAge(store: Store): HTMLElement {
@@ -39,10 +51,27 @@ export function renderAge(store: Store): HTMLElement {
       el("h3", { class: "route-name" }, [route.is_standard ? "標準ルート" : "代替ルート"]),
     ]);
     for (const step of route.steps) {
+      const stepDef = ds.steps.find((s) => s.id === step.step_id);
+      const stepChildren = [
+        el("span", { class: "step-status-label" }, [statusLabel(step.status)]),
+        el("span", { class: "step-expiry-label" }, [expiryLabel(step.expiry_type)]),
+      ];
+      const description = step.matched_rule?.description;
+      if (description) {
+        stepChildren.push(el("p", { class: "step-description" }, [description]));
+      }
+      const confidenceNote = lowestConfidenceNote(ds, step.matched_rule);
+      if (confidenceNote) {
+        stepChildren.push(el("p", { class: "step-confidence-note" }, [confidenceNote]));
+      }
+      const caution = step.matched_rule?.caution_text;
+      if (caution) {
+        stepChildren.push(el("p", { class: "step-caution" }, [caution]));
+      }
       routeBlock.appendChild(
         el("div", { class: `step-status status-${step.status}` }, [
-          el("span", { class: "step-status-label" }, [statusLabel(step.status)]),
-          el("span", { class: "step-expiry-label" }, [expiryLabel(step.expiry_type)]),
+          el("h4", { class: "step-name" }, [stepDef?.name ?? step.step_id]),
+          ...stepChildren,
         ])
       );
     }

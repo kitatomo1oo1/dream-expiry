@@ -223,5 +223,23 @@
     "date_precision": "year",
     "description": "ドラマ『Mother』で新人賞を多数受賞。子役から成人女優への継続的なキャリアを積んでいる。",
     "source_ids": ["src_actor_ashida"]
+  },
+  {
+    "id": "le_lily_franky_1",
+    "person_id": "p_lily_franky",
+    "type": "DREAM_LINE",
+    "date": "2008",
+    "date_precision": "year",
+    "description": "1963年11月生。2008年、44歳で映画『ぐるりのこと。』に出演。俳優としては未経験からのスタートだった(検索で確認できた複数の資料が矛盾していたため、これ以前の出演歴の有無はUNKNOWNとしている)。",
+    "source_ids": ["src_actor_lily_franky"]
+  },
+  {
+    "id": "le_lily_franky_2",
+    "person_id": "p_lily_franky",
+    "type": "MILESTONE",
+    "date": "2009",
+    "date_precision": "year",
+    "description": "『ぐるりのこと。』の演技が評価され、翌2009年に第51回ブルーリボン賞新人賞を受賞。最高齢での新人賞受賞と報じられている。",
+    "source_ids": ["src_actor_lily_franky"]
   }
 ]
