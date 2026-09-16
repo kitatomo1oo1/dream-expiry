@@ -1,0 +1,226 @@
+[
+  {
+    "id": "doctor",
+    "level": "A"
+  },
+  {
+    "id": "dentist",
+    "level": "A"
+  },
+  {
+    "id": "veterinarian",
+    "level": "A"
+  },
+  {
+    "id": "pharmacist",
+    "level": "A"
+  },
+  {
+    "id": "nurse",
+    "level": "A"
+  },
+  {
+    "id": "midwife",
+    "level": "A"
+  },
+  {
+    "id": "paramedic",
+    "level": "A"
+  },
+  {
+    "id": "lawyer",
+    "level": "A"
+  },
+  {
+    "id": "cpa",
+    "level": "A"
+  },
+  {
+    "id": "tax_accountant",
+    "level": "A"
+  },
+  {
+    "id": "architect",
+    "level": "A"
+  },
+  {
+    "id": "police_officer",
+    "level": "A"
+  },
+  {
+    "id": "firefighter",
+    "level": "A"
+  },
+  {
+    "id": "self_defense_force",
+    "level": "A"
+  },
+  {
+    "id": "pilot",
+    "level": "A"
+  },
+  {
+    "id": "air_traffic_controller",
+    "level": "A"
+  },
+  {
+    "id": "astronaut",
+    "level": "A"
+  },
+  {
+    "id": "jra_jockey",
+    "level": "A"
+  },
+  {
+    "id": "pro_boxer",
+    "level": "A"
+  },
+  {
+    "id": "sumo_wrestler",
+    "level": "A"
+  },
+  {
+    "id": "pro_footballer",
+    "level": "A"
+  },
+  {
+    "id": "boat_racer",
+    "level": "A"
+  },
+  {
+    "id": "keirin",
+    "level": "A"
+  },
+  {
+    "id": "takarazuka_performer",
+    "level": "A"
+  },
+  {
+    "id": "youtuber",
+    "level": "A"
+  },
+  {
+    "id": "shogi_player",
+    "level": "A"
+  },
+  {
+    "id": "pro_baseball",
+    "level": "B"
+  },
+  {
+    "id": "pro_golfer",
+    "level": "B"
+  },
+  {
+    "id": "tennis_player",
+    "level": "B"
+  },
+  {
+    "id": "basketball_player",
+    "level": "B"
+  },
+  {
+    "id": "actor",
+    "level": "B"
+  },
+  {
+    "id": "voice_actor",
+    "level": "B"
+  },
+  {
+    "id": "idol",
+    "level": "B"
+  },
+  {
+    "id": "singer",
+    "level": "B"
+  },
+  {
+    "id": "comedian",
+    "level": "B"
+  },
+  {
+    "id": "model",
+    "level": "B"
+  },
+  {
+    "id": "manga_artist",
+    "level": "B"
+  },
+  {
+    "id": "novelist",
+    "level": "B"
+  },
+  {
+    "id": "picture_book_author",
+    "level": "B"
+  },
+  {
+    "id": "screenwriter",
+    "level": "B"
+  },
+  {
+    "id": "musician",
+    "level": "B"
+  },
+  {
+    "id": "composer",
+    "level": "B"
+  },
+  {
+    "id": "film_director",
+    "level": "B"
+  },
+  {
+    "id": "photographer",
+    "level": "B"
+  },
+  {
+    "id": "vtuber",
+    "level": "B"
+  },
+  {
+    "id": "streamer",
+    "level": "B"
+  },
+  {
+    "id": "pro_gamer",
+    "level": "B"
+  },
+  {
+    "id": "programmer",
+    "level": "B"
+  },
+  {
+    "id": "ai_engineer",
+    "level": "B"
+  },
+  {
+    "id": "chef",
+    "level": "B"
+  },
+  {
+    "id": "sushi_chef",
+    "level": "B"
+  },
+  {
+    "id": "patissier",
+    "level": "B"
+  },
+  {
+    "id": "miyadaiku",
+    "level": "B"
+  },
+  {
+    "id": "farmer",
+    "level": "B"
+  },
+  {
+    "id": "fisher",
+    "level": "B"
+  },
+  {
+    "id": "entrepreneur",
+    "level": "B"
+  }
+]

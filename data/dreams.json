@@ -1,0 +1,12 @@
+[
+  { "id": "dream_doctor", "name": "医師になる", "occupation_ids": ["doctor"], "is_representative": true },
+  { "id": "dream_jra_jockey", "name": "JRA騎手になる", "occupation_ids": ["jra_jockey"], "is_representative": true },
+  { "id": "dream_pro_boxer", "name": "プロボクサーになる", "occupation_ids": ["pro_boxer"], "is_representative": true },
+  { "id": "dream_sumo_wrestler", "name": "力士になる", "occupation_ids": ["sumo_wrestler"], "is_representative": true },
+  { "id": "dream_pro_footballer", "name": "プロサッカー選手になる", "occupation_ids": ["pro_footballer"], "is_representative": true },
+  { "id": "dream_youtuber", "name": "YouTuberになる", "occupation_ids": ["youtuber"], "is_representative": true },
+  { "id": "dream_shogi_player", "name": "プロ棋士になる", "occupation_ids": ["shogi_player"], "is_representative": true },
+  { "id": "dream_takarazuka_performer", "name": "宝塚歌劇団員になる", "occupation_ids": ["takarazuka_performer"], "is_representative": true },
+  { "id": "dream_manga_artist", "name": "漫画家になる", "occupation_ids": ["manga_artist"], "is_representative": true },
+  { "id": "dream_actor", "name": "俳優になる", "occupation_ids": ["actor"], "is_representative": true }
+]

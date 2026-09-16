@@ -1,0 +1,107 @@
+[
+  {
+    "id": "doctor",
+    "dream_line": "医籍登録＝医師免許取得",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "jra_jockey",
+    "dream_line": "騎手免許取得",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "pro_boxer",
+    "dream_line": "プロライセンスを得て有償プロ試合に出場可能となる地点",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "sumo_wrestler",
+    "dream_line": "日本相撲協会への力士登録",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "pro_footballer",
+    "dream_line": "報酬を伴うプロ選手契約",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "astronaut",
+    "dream_line": "宇宙飛行士候補者として正式選抜・雇用",
+    "state": "CYCLE_SCOPED"
+  },
+  {
+    "id": "takarazuka_performer",
+    "dream_line": "音楽学校卒業後の歌劇団入団",
+    "state": "ROUTE_SCOPED"
+  },
+  {
+    "id": "actor",
+    "dream_line": "初の有償演技契約・仕事",
+    "state": "DEFINITIONAL"
+  },
+  {
+    "id": "manga_artist",
+    "dream_line": "初の有償商業漫画仕事・掲載",
+    "state": "DEFINITIONAL"
+  },
+  {
+    "id": "youtuber",
+    "dream_line": "YPP承認後、ネイティブ収益化機能を利用可能となる地点",
+    "state": "DYNAMIC"
+  },
+  {
+    "id": "nurse",
+    "dream_line": "看護師籍登録・免許",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "midwife",
+    "dream_line": "助産師籍登録・免許",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "pharmacist",
+    "dream_line": "薬剤師名簿登録・免許",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "shogi_player",
+    "dream_line": "四段昇段＝プロ棋士",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "dentist",
+    "dream_line": "歯科医籍登録・免許",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "paramedic",
+    "dream_line": "救急救命士名簿登録・免許",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "lawyer",
+    "dream_line": "弁護士名簿登録を最終候補",
+    "state": "NEEDS_PRIMARY_FINALIZATION"
+  },
+  {
+    "id": "cpa",
+    "dream_line": "公認会計士名簿登録",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "tax_accountant",
+    "dream_line": "税理士名簿登録",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "architect",
+    "dream_line": "一級建築士名簿登録・免許",
+    "state": "SEED_VERIFIED"
+  },
+  {
+    "id": "air_traffic_controller",
+    "dream_line": "研修・技能試験を経て航空管制官として発令",
+    "state": "SEED_VERIFIED_2026"
+  }
+]

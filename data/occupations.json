@@ -1,0 +1,12 @@
+[
+  { "id": "doctor", "dream_id": "dream_doctor", "name": "医師", "route_ids": ["route_doctor_standard"] },
+  { "id": "jra_jockey", "dream_id": "dream_jra_jockey", "name": "JRA騎手", "route_ids": ["route_jra_jockey_school"] },
+  { "id": "pro_boxer", "dream_id": "dream_pro_boxer", "name": "プロボクサー", "route_ids": ["route_pro_boxer_standard"] },
+  { "id": "sumo_wrestler", "dream_id": "dream_sumo_wrestler", "name": "力士", "route_ids": ["route_sumo_standard", "route_sumo_qualified_achievement"] },
+  { "id": "pro_footballer", "dream_id": "dream_pro_footballer", "name": "プロサッカー選手", "route_ids": ["route_pro_footballer_standard"] },
+  { "id": "youtuber", "dream_id": "dream_youtuber", "name": "YouTuber", "route_ids": ["route_youtuber_standard"] },
+  { "id": "shogi_player", "dream_id": "dream_shogi_player", "name": "プロ棋士", "route_ids": ["route_shogi_shoreikai", "route_shogi_pro_exam"] },
+  { "id": "takarazuka_performer", "dream_id": "dream_takarazuka_performer", "name": "宝塚歌劇団員", "route_ids": ["route_takarazuka_standard"] },
+  { "id": "manga_artist", "dream_id": "dream_manga_artist", "name": "漫画家", "route_ids": ["route_manga_artist_standard"] },
+  { "id": "actor", "dream_id": "dream_actor", "name": "俳優", "route_ids": ["route_actor_standard"] }
+]

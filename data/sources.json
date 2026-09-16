@@ -1,0 +1,191 @@
+[
+  {
+    "id": "src_engine_spec_jra",
+    "title": "ENGINE.md 必須境界定義 (JRA騎手)",
+    "publisher": "本プロジェクト正本 (spec/ENGINE.md)",
+    "confidence": "high",
+    "note": "実装マスタープロンプトが与えた必須境界: 14 FUTURE / 15,19 CONDITIONAL / 20 school route closed。外部一次資料(JRA競馬学校 騎手課程 募集要項)による条文確認はTODO_DATA.mdで管理する。"
+  },
+  {
+    "id": "src_engine_spec_boxer",
+    "title": "ENGINE.md 必須境界定義 (プロボクサー)",
+    "publisher": "本プロジェクト正本 (spec/ENGINE.md)",
+    "confidence": "high",
+    "note": "16は試験と試合年齢を分離、17-34 conditional、35 newcomer closed。外部一次資料(日本ボクシングコミッション制度)による条文確認はTODO_DATA.mdで管理する。"
+  },
+  {
+    "id": "src_engine_spec_sumo",
+    "title": "ENGINE.md 必須境界定義 (力士)",
+    "publisher": "本プロジェクト正本 (spec/ENGINE.md)",
+    "confidence": "high",
+    "note": "22 standard candidate、24 no exception closed、24 qualified achievement alternative/conditional。23歳の扱いはENGINE.mdに明記がないためUNKNOWNとして実装。外部一次資料(日本相撲協会 新弟子検査要項)による条文確認はTODO_DATA.mdで管理する。"
+  },
+  {
+    "id": "src_doctor_law",
+    "title": "医師法第4条(免許の欠格事由)・第11条(受験資格) — 年齢条項なし",
+    "publisher": "厚生労働省",
+    "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/ishi/",
+    "confidence": "high",
+    "note": "医師国家試験・医籍登録に上限年齢の規定は確認できない。受験資格は医学部医学科(6年制)卒業等の学歴要件のみ。下限は事実上の修学年数による制約。"
+  },
+  {
+    "id": "src_doctor_secondary",
+    "title": "医師免許取得に年齢制限はない",
+    "publisher": "CLIUS",
+    "url": "https://clius.jp/mag/2021/07/19/doctor-license-age-about/",
+    "confidence": "medium",
+    "note": "二次資料。第97回医師国家試験合格者の最高齢は66歳という実例を紹介(個人名は未特定)。"
+  },
+  {
+    "id": "src_football_jleague_2026",
+    "title": "プロサッカー選手の契約に関する規則 改正(2026年4月施行)",
+    "publisher": "Jリーグ公式",
+    "url": "https://www.jleague.jp/sp/news/article/32802/",
+    "source_date": "2025",
+    "applicable_cycle": "2026年4月以降",
+    "confidence": "high",
+    "note": "「満15歳に達した日以後の最初の4月1日以降」プロ契約可能に改正(実質、中学卒業後の4月から)。旧規則は満16歳以上。上限年齢の規定は見当たらない。"
+  },
+  {
+    "id": "src_football_miura",
+    "title": "三浦知良、アトレチコ鈴鹿で現役続行(58歳)",
+    "publisher": "Arab News Japan / テレ東スポーツ",
+    "url": "https://www.arabnews.jp/article/features/article_142242/",
+    "source_date": "2024-11-11",
+    "confidence": "high",
+    "note": "日本人プロサッカー選手の最高齢現役記録。発言内容は事実として引用するが動機の推測はしない。"
+  },
+  {
+    "id": "src_shogi_shoreikai_rule",
+    "title": "新進棋士奨励会 規定",
+    "publisher": "日本将棋連盟",
+    "url": "https://www.shogi.or.jp/match/shoreikai/provision.html",
+    "confidence": "high",
+    "note": "満21歳の誕生日までに初段、満26歳の誕生日を含む三段リーグ終了までに四段(プロ)必須。当該リーグで勝ち越せば次のリーグまで在籍延長可、満29歳のリーグ終了時が最終上限。"
+  },
+  {
+    "id": "src_shogi_imaizumi",
+    "title": "今泉健司、プロ編入試験合格(41歳)",
+    "publisher": "ねとらぼ / Wikipedia",
+    "url": "https://nlab.itmedia.co.jp/cont/articles/3239799/",
+    "source_date": "2014-12-08",
+    "confidence": "high",
+    "note": "1999年(26歳)に年齢制限で三段のまま奨励会退会。2014年12月8日にプロ編入試験合格、2015年4月1日付でプロ棋士(四段)昇格。戦後最年長プロ入り。標準ルート閉鎖後の代替ルート実例。"
+  },
+  {
+    "id": "src_shogi_kato",
+    "title": "加藤一二三、現役引退(77歳)",
+    "publisher": "Wikipedia / 時事通信",
+    "url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E4%B8%80%E4%BA%8C%E4%B8%89",
+    "source_date": "2017-06-20",
+    "confidence": "high",
+    "note": "史上最高齢棋士としての引退。"
+  },
+  {
+    "id": "src_takarazuka_2026_boshu",
+    "title": "宝塚音楽学校 入学試験について(114期生募集)",
+    "publisher": "宝塚音楽学校 公式",
+    "url": "https://www.tms.ac.jp/guidance/examination.html",
+    "applicable_cycle": "2026年度(114期生)",
+    "confidence": "medium",
+    "note": "2007年4月2日〜2011年4月1日生まれが応募資格(実質、中学卒業〜高校卒業段階の年齢帯)。生年月日レンジは年度ごとに更新されるCYCLE_SCOPEDな数値。"
+  },
+  {
+    "id": "src_takarazuka_amami",
+    "title": "天海祐希 (73期生、月組トップスター、退団後に女優転身)",
+    "publisher": "Wikipedia",
+    "url": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%B5%B7%E7%A5%90%E5%B8%8C",
+    "confidence": "high",
+    "note": "1987年入団。1993年、史上最年少25歳で月組トップスター就任。1995年12月退団(卒業)、翌年から女優として活動開始。"
+  },
+  {
+    "id": "src_youtube_ypp_help",
+    "title": "YouTube Partner Program overview & eligibility",
+    "publisher": "Google / YouTube 公式ヘルプ",
+    "url": "https://support.google.com/youtube/answer/72851",
+    "confidence": "high",
+    "note": "登録者1,000人以上＋直近12ヶ月の視聴時間4,000時間以上、またはShorts視聴回数(90日で1,000万回)等。広告収益受取(AdSense)には18歳以上が必要。13-17歳はYPP参加自体は可能だが、収益を受け取るAdSenseアカウントは保護者が所有・管理する必要がある。2027年2月1日から視聴時間8,000時間等に引き上げ予定と明記されており、要件自体がDYNAMICに変更されうる。"
+  },
+  {
+    "id": "src_youtube_hikakin_hiatus",
+    "title": "HIKAKIN、活動休止を発表→約1週間後に活動再開",
+    "publisher": "リアルサウンド / KAI-YOU",
+    "url": "https://realsound.jp/tech/2023/04/post-1310686.html",
+    "source_date": "2023-04",
+    "confidence": "medium",
+    "note": "「引退」ではなく「活動休止」。休止の正確な期間・終了日は本人発表の範囲のみ確認、厳密な日付は未確定。"
+  },
+  {
+    "id": "src_manga_no_license",
+    "title": "漫画家に免許・年齢制限の制度は存在しない",
+    "publisher": "業界解説(二次資料)",
+    "url": "https://anju-manju.com/?p=3421",
+    "confidence": "medium",
+    "note": "一次法令ではなく業界解説の集約情報。ただし該当する免許・年齢条項自体が存在しないことは、医師や棋士と異なり確認しやすい種類の『不在の事実』。"
+  },
+  {
+    "id": "src_manga_togashi",
+    "title": "冨樫義博(HUNTER×HUNTER)、連載再開と休載を繰り返す",
+    "publisher": "ciatr / KAI-YOU",
+    "url": "https://ciatr.jp/topics/35767",
+    "source_date": "2022-2023",
+    "confidence": "medium",
+    "note": "2022年10月に連載再開、2022年12月26日発売号で週刊連載ではない形態を編集部が発表、2023年1月から再度休載。休載理由は本人がSNSで『腰の痛み』と説明した事実のみ採用。最新状況は流動的。"
+  },
+  {
+    "id": "src_actor_no_license",
+    "title": "俳優業そのものへの免許制度は存在しない",
+    "publisher": "本プロジェクトの調査結論",
+    "confidence": "high",
+    "note": "俳優という職業に国家資格・免許は存在しない。"
+  },
+  {
+    "id": "src_actor_labor_law_minors",
+    "title": "年少者(児童)の労働基準法上の使用制限と演劇事業の特則",
+    "publisher": "栃木労働局 / 骨董通り法律事務所",
+    "url": "https://jsite.mhlw.go.jp/tochigi-roudoukyoku/library/tochigi-roudoukyoku/hourei/kantoku/nensyou.pdf",
+    "confidence": "high",
+    "note": "原則、満15歳に達した日以後の最初の3月31日まで児童の使用は禁止。ただし『映画の製作又は演劇の事業』は行政官庁の許可を得れば満13歳未満でも使用可能という特則がある。これは職業免許ではなく労働条件の保護規定であり、俳優という職業への参入ゲートではない。"
+  },
+  {
+    "id": "src_actor_ashida",
+    "title": "芦田愛菜、3歳から芸能活動・2009年子役デビュー",
+    "publisher": "Wikipedia / oricon",
+    "url": "https://ja.wikipedia.org/wiki/%E8%8A%A6%E7%94%B0%E6%84%9B%E8%8F%9C",
+    "confidence": "high",
+    "note": "2004年6月23日生。3歳から芸能活動、2009年子役デビュー、2010年『Mother』で新人賞多数受賞。子役から成人女優への継続的キャリア。"
+  },
+  {
+    "id": "src_take_yutaka",
+    "title": "武豊 デビュー30周年・通算成績・現役継続",
+    "publisher": "JRA-VAN / netkeiba / Wikipedia",
+    "url": "https://jra-van.jp/fun/production/take_01.html",
+    "confidence": "high",
+    "note": "1969年3月15日生、1987年3月15日(18歳)初騎乗。JRA歴代最多勝(通算4500勝超)、リーディングジョッキー18回、騎手大賞9回。2026年現在57歳で現役を継続中。"
+  },
+  {
+    "id": "src_gushiken_yoko",
+    "title": "具志堅用高 プロデビュー・世界タイトル13連続防衛・引退",
+    "publisher": "日本プロボクシング協会 / spaia / Wikipedia",
+    "url": "https://jpba.gr.jp/archive/1970_08.html",
+    "confidence": "medium",
+    "note": "1974年5月28日、牧公一(田辺)との4回戦でプロデビュー。1976年10月、ドミニカ共和国でフアン・グスマンからWBA世界ジュニアフライ級タイトル奪取(7回KO)。1980年10月までに世界タイトル13回連続防衛(前人未踏)。1981年3月引退。"
+  },
+  {
+    "id": "src_akebono",
+    "title": "曙太郎 初土俵・横綱昇進・引退・K-1転向",
+    "publisher": "日本相撲協会公式 / 時事通信 / K-1 CLASSICS",
+    "url": "https://www.sumo.or.jp/ResultRikishiData/profile/35/",
+    "confidence": "high",
+    "note": "1988年春場所で初土俵。1993年初場所後、初土俵から丸5年で第64代横綱昇進(史上初の外国出身横綱)。2001年1月引退。2003年11月5日、日本相撲協会に退職届を提出しプロ格闘家に転向。2003年12月31日、K-1デビュー戦(ボブ・サップに1RKO負け)。2006年にリングを降りるまでK-1ルール1勝8敗、総合格闘技ルール0勝4敗。"
+  },
+  {
+    "id": "src_hinohara",
+    "title": "日野原重明、105歳まで現役医師として診療・執筆・講演を継続",
+    "publisher": "日経新聞",
+    "url": "https://www.nikkei.com/article/DGXLASDG18H25_Y7A710C1000000/",
+    "source_date": "2017-07-18",
+    "confidence": "high",
+    "note": "聖路加国際病院名誉院長。2017年7月18日、105歳で死去。"
+  }
+]

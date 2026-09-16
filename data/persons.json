@@ -1,0 +1,13 @@
+[
+  { "id": "p_take_yutaka", "name": "武豊", "occupation_id": "jra_jockey", "summary": "1969年生。1987年3月15日、18歳で初騎乗。JRA歴代最多勝記録保持者。", "source_ids": ["src_take_yutaka"] },
+  { "id": "p_gushiken_yoko", "name": "具志堅用高", "occupation_id": "pro_boxer", "summary": "1974年プロデビュー。WBA世界ジュニアフライ級王座を13回連続防衛。", "source_ids": ["src_gushiken_yoko"] },
+  { "id": "p_akebono", "name": "曙太郎", "occupation_id": "sumo_wrestler", "summary": "史上初の外国出身横綱(第64代)。引退後K-1で格闘家に転向。", "source_ids": ["src_akebono"] },
+  { "id": "p_hinohara_shigeaki", "name": "日野原重明", "occupation_id": "doctor", "summary": "聖路加国際病院名誉院長。105歳まで現役医師として活動。", "source_ids": ["src_hinohara"] },
+  { "id": "p_miura_kazuyoshi", "name": "三浦知良", "occupation_id": "pro_footballer", "summary": "日本人プロサッカー選手の最高齢現役記録保持者。", "source_ids": ["src_football_miura"] },
+  { "id": "p_imaizumi_kenji", "name": "今泉健司", "occupation_id": "shogi_player", "summary": "奨励会を年齢制限で退会後、プロ編入試験に合格して41歳でプロ棋士になった実例。", "source_ids": ["src_shogi_imaizumi"] },
+  { "id": "p_kato_hifumi", "name": "加藤一二三", "occupation_id": "shogi_player", "summary": "史上最高齢(77歳)でプロ棋士を引退。", "source_ids": ["src_shogi_kato"] },
+  { "id": "p_amami_yuki", "name": "天海祐希", "occupation_id": "takarazuka_performer", "summary": "宝塚歌劇団73期生。史上最年少25歳で月組トップスター就任後、退団して女優に転身。", "source_ids": ["src_takarazuka_amami"] },
+  { "id": "p_hikakin", "name": "HIKAKIN", "occupation_id": "youtuber", "summary": "活動休止を発表し、約1週間後に活動を再開した実例。", "source_ids": ["src_youtube_hikakin_hiatus"] },
+  { "id": "p_togashi_yoshihiro", "name": "冨樫義博", "occupation_id": "manga_artist", "summary": "『HUNTER×HUNTER』作者。連載の再開と休載を繰り返している。", "source_ids": ["src_manga_togashi"] },
+  { "id": "p_ashida_mana", "name": "芦田愛菜", "occupation_id": "actor", "summary": "3歳から芸能活動、2009年子役デビュー。子役から成人女優へ継続的なキャリアを積む。", "source_ids": ["src_actor_ashida"] }
+]

@@ -1,0 +1,24 @@
+{
+  "statuses": [
+    "OPEN",
+    "FUTURE",
+    "CONDITIONAL",
+    "ROUTE_CLOSED",
+    "ALTERNATIVE_AVAILABLE",
+    "UNKNOWN"
+  ],
+  "expiry_types": [
+    "HARD",
+    "ROUTE",
+    "CONDITIONAL",
+    "DYNAMIC",
+    "NO_UPPER_DEADLINE_FOUND",
+    "UNKNOWN"
+  ],
+  "invariants": [
+    "missing != 0",
+    "UNKNOWN != false",
+    "ROUTE_CLOSED != dream_impossible",
+    "NO_UPPER_DEADLINE_FOUND != easy"
+  ]
+}

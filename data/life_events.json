@@ -1,0 +1,227 @@
+[
+  {
+    "id": "le_take_1",
+    "person_id": "p_take_yutaka",
+    "type": "DREAM_LINE",
+    "date": "1987-03-15",
+    "date_precision": "day",
+    "description": "18歳で初騎乗。騎手免許取得後、JRA所属騎手として公式戦に初めて騎乗した。",
+    "source_ids": ["src_take_yutaka"]
+  },
+  {
+    "id": "le_take_2",
+    "person_id": "p_take_yutaka",
+    "type": "MILESTONE",
+    "date": "2026",
+    "date_precision": "year",
+    "description": "デビューから約39年、57歳で現役を継続中。JRA歴代最多勝(通算4500勝超)、リーディングジョッキー18回、騎手大賞9回を記録している。",
+    "source_ids": ["src_take_yutaka"]
+  },
+  {
+    "id": "le_gushiken_1",
+    "person_id": "p_gushiken_yoko",
+    "type": "DREAM_LINE",
+    "date": "1974-05-28",
+    "date_precision": "day",
+    "description": "牧公一(田辺)との4回戦でプロデビュー。",
+    "source_ids": ["src_gushiken_yoko"]
+  },
+  {
+    "id": "le_gushiken_2",
+    "person_id": "p_gushiken_yoko",
+    "type": "MILESTONE",
+    "date": "1976-10",
+    "date_precision": "month",
+    "description": "ドミニカ共和国でフアン・グスマンからWBA世界ジュニアフライ級タイトルを7回KO勝ちで奪取。",
+    "source_ids": ["src_gushiken_yoko"]
+  },
+  {
+    "id": "le_gushiken_3",
+    "person_id": "p_gushiken_yoko",
+    "type": "MILESTONE",
+    "date": "1980-10",
+    "date_precision": "month",
+    "description": "世界タイトルを13回連続防衛(前人未踏)。",
+    "source_ids": ["src_gushiken_yoko"]
+  },
+  {
+    "id": "le_gushiken_4",
+    "person_id": "p_gushiken_yoko",
+    "type": "RETIREMENT",
+    "date": "1981-03",
+    "date_precision": "month",
+    "description": "現役引退。",
+    "source_ids": ["src_gushiken_yoko"]
+  },
+  {
+    "id": "le_akebono_1",
+    "person_id": "p_akebono",
+    "type": "DREAM_LINE",
+    "date": "1988-03",
+    "date_precision": "month",
+    "description": "1988年春場所で初土俵。力士登録を経て大相撲デビュー。",
+    "source_ids": ["src_akebono"]
+  },
+  {
+    "id": "le_akebono_2",
+    "person_id": "p_akebono",
+    "type": "MILESTONE",
+    "date": "1993-01",
+    "date_precision": "month",
+    "description": "初土俵から丸5年、1993年初場所後に第64代横綱昇進。史上初の外国出身横綱となった。",
+    "source_ids": ["src_akebono"]
+  },
+  {
+    "id": "le_akebono_3",
+    "person_id": "p_akebono",
+    "type": "RETIREMENT",
+    "date": "2001-01",
+    "date_precision": "month",
+    "description": "現役引退。",
+    "source_ids": ["src_akebono"]
+  },
+  {
+    "id": "le_akebono_4",
+    "person_id": "p_akebono",
+    "type": "CAREER_CHANGE",
+    "date": "2003-11-05",
+    "date_precision": "day",
+    "description": "日本相撲協会に退職届を提出し、プロ格闘家(K-1)に転向。同年12月31日、ボブ・サップを相手にK-1デビュー戦を行い1ラウンドKO負け。",
+    "source_ids": ["src_akebono"]
+  },
+  {
+    "id": "le_akebono_5",
+    "person_id": "p_akebono",
+    "type": "SETBACK",
+    "date": "2006",
+    "date_precision": "year",
+    "description": "2006年にリングを降りるまで、K-1ルールで1勝8敗、総合格闘技ルールで0勝4敗という成績だった。",
+    "source_ids": ["src_akebono"]
+  },
+  {
+    "id": "le_hinohara_1",
+    "person_id": "p_hinohara_shigeaki",
+    "type": "MILESTONE",
+    "date": "2017-07-18",
+    "date_precision": "day",
+    "description": "聖路加国際病院名誉院長として、現役医師として診療・執筆・講演を最後まで継続。105歳で死去。",
+    "source_ids": ["src_hinohara"]
+  },
+  {
+    "id": "le_miura_1",
+    "person_id": "p_miura_kazuyoshi",
+    "type": "MILESTONE",
+    "date": "2024-11-11",
+    "date_precision": "day",
+    "description": "58歳、JFL所属アトレチコ鈴鹿での現役続行を表明。日本人プロサッカー選手の最高齢現役記録。",
+    "source_ids": ["src_football_miura"]
+  },
+  {
+    "id": "le_imaizumi_1",
+    "person_id": "p_imaizumi_kenji",
+    "type": "SETBACK",
+    "date": "1999",
+    "date_precision": "year",
+    "description": "26歳、年齢制限により三段のまま奨励会を退会。",
+    "source_ids": ["src_shogi_imaizumi"]
+  },
+  {
+    "id": "le_imaizumi_2",
+    "person_id": "p_imaizumi_kenji",
+    "type": "COMEBACK",
+    "date": "2014-12-08",
+    "date_precision": "day",
+    "description": "プロ編入試験に合格。2015年4月1日付でプロ棋士(四段)に昇格。戦後最年長(41歳)でのプロ入りとなった。",
+    "source_ids": ["src_shogi_imaizumi"]
+  },
+  {
+    "id": "le_kato_1",
+    "person_id": "p_kato_hifumi",
+    "type": "RETIREMENT",
+    "date": "2017-06-20",
+    "date_precision": "day",
+    "description": "77歳で現役引退。史上最高齢棋士としての引退となった。",
+    "source_ids": ["src_shogi_kato"]
+  },
+  {
+    "id": "le_amami_1",
+    "person_id": "p_amami_yuki",
+    "type": "DREAM_LINE",
+    "date": "1987",
+    "date_precision": "year",
+    "description": "宝塚歌劇団73期生として入団。",
+    "source_ids": ["src_takarazuka_amami"]
+  },
+  {
+    "id": "le_amami_2",
+    "person_id": "p_amami_yuki",
+    "type": "MILESTONE",
+    "date": "1993",
+    "date_precision": "year",
+    "description": "史上最年少25歳で月組トップスターに就任。",
+    "source_ids": ["src_takarazuka_amami"]
+  },
+  {
+    "id": "le_amami_3",
+    "person_id": "p_amami_yuki",
+    "type": "CAREER_CHANGE",
+    "date": "1995-12",
+    "date_precision": "month",
+    "description": "宝塚歌劇団を退団(卒業)。翌年から女優として活動を開始した。",
+    "source_ids": ["src_takarazuka_amami"]
+  },
+  {
+    "id": "le_hikakin_1",
+    "person_id": "p_hikakin",
+    "type": "SETBACK",
+    "date": "2023-04",
+    "date_precision": "month",
+    "description": "活動休止を発表(「引退」ではなく「活動休止」)。",
+    "source_ids": ["src_youtube_hikakin_hiatus"]
+  },
+  {
+    "id": "le_hikakin_2",
+    "person_id": "p_hikakin",
+    "type": "COMEBACK",
+    "date": "2023-04",
+    "date_precision": "month",
+    "description": "約1週間後に活動を再開。厳密な休止期間の終了日は本人発表の範囲内でのみ確認されており未確定。",
+    "source_ids": ["src_youtube_hikakin_hiatus"]
+  },
+  {
+    "id": "le_togashi_1",
+    "person_id": "p_togashi_yoshihiro",
+    "type": "COMEBACK",
+    "date": "2022-10",
+    "date_precision": "month",
+    "description": "『HUNTER×HUNTER』の連載を再開。",
+    "source_ids": ["src_manga_togashi"]
+  },
+  {
+    "id": "le_togashi_2",
+    "person_id": "p_togashi_yoshihiro",
+    "type": "SETBACK",
+    "date": "2023-01",
+    "date_precision": "month",
+    "description": "2022年12月26日発売号で編集部が週刊連載ではない形態での掲載を発表した後、2023年1月から再び休載。休載理由は本人がSNSで『腰の痛み』と説明した事実のみを採用しており、それ以上の心情の推測はしない。",
+    "source_ids": ["src_manga_togashi"]
+  },
+  {
+    "id": "le_ashida_1",
+    "person_id": "p_ashida_mana",
+    "type": "DREAM_LINE",
+    "date": "2009",
+    "date_precision": "year",
+    "description": "3歳から芸能活動を始め、2009年に子役として有償出演デビュー。",
+    "source_ids": ["src_actor_ashida"]
+  },
+  {
+    "id": "le_ashida_2",
+    "person_id": "p_ashida_mana",
+    "type": "MILESTONE",
+    "date": "2010",
+    "date_precision": "year",
+    "description": "ドラマ『Mother』で新人賞を多数受賞。子役から成人女優への継続的なキャリアを積んでいる。",
+    "source_ids": ["src_actor_ashida"]
+  }
+]

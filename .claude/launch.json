@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dream-expiry-dev",
+      "runtimeExecutable": "C:\\Users\\kitaz\\AppData\\Local\\Programs\\nodejs-portable\\npm.cmd",
+      "runtimeArgs": ["run", "dev", "--", "--strictPort"],
+      "port": 5173
+    }
+  ]
+}

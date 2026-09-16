@@ -1,0 +1,12 @@
+{
+  "doctor": ["src_doctor_law"],
+  "jra_jockey": ["src_engine_spec_jra"],
+  "pro_boxer": ["src_engine_spec_boxer"],
+  "sumo_wrestler": ["src_engine_spec_sumo"],
+  "pro_footballer": ["src_football_jleague_2026"],
+  "youtuber": ["src_youtube_ypp_help"],
+  "shogi_player": ["src_shogi_shoreikai_rule"],
+  "takarazuka_performer": ["src_takarazuka_2026_boshu"],
+  "manga_artist": ["src_manga_no_license"],
+  "actor": ["src_actor_no_license"]
+}

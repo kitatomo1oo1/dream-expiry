@@ -1,0 +1,306 @@
+{
+  "routes": [
+    { "id": "route_doctor_standard", "occupation_id": "doctor", "name": "標準ルート(医学部卒業+医師国家試験+医籍登録)", "is_standard": true, "step_ids": ["step_doctor_license"] },
+    { "id": "route_jra_jockey_school", "occupation_id": "jra_jockey", "name": "標準ルート(JRA競馬学校 騎手課程)", "is_standard": true, "step_ids": ["step_jra_school_exam"] },
+    { "id": "route_pro_boxer_standard", "occupation_id": "pro_boxer", "name": "標準ルート(プロテスト+公式戦出場)", "is_standard": true, "step_ids": ["step_boxer_license"] },
+    { "id": "route_sumo_standard", "occupation_id": "sumo_wrestler", "name": "標準ルート(新弟子検査)", "is_standard": true, "step_ids": ["step_sumo_shindeshi_kensa"] },
+    { "id": "route_sumo_qualified_achievement", "occupation_id": "sumo_wrestler", "name": "代替ルート(有力アマチュア実績者の付出資格)", "is_standard": false, "step_ids": ["step_sumo_fukidashi"] },
+    { "id": "route_pro_footballer_standard", "occupation_id": "pro_footballer", "name": "標準ルート(Jリーグ プロ契約)", "is_standard": true, "step_ids": ["step_football_contract"] },
+    { "id": "route_youtuber_standard", "occupation_id": "youtuber", "name": "標準ルート(YouTube Partner Program)", "is_standard": true, "step_ids": ["step_youtuber_ypp_metrics", "step_youtuber_monetization_payout"] },
+    { "id": "route_shogi_shoreikai", "occupation_id": "shogi_player", "name": "標準ルート(新進棋士奨励会)", "is_standard": true, "step_ids": ["step_shogi_yondan"] },
+    { "id": "route_shogi_pro_exam", "occupation_id": "shogi_player", "name": "代替ルート(プロ編入試験)", "is_standard": false, "step_ids": ["step_shogi_pro_exam"] },
+    { "id": "route_takarazuka_standard", "occupation_id": "takarazuka_performer", "name": "標準ルート(宝塚音楽学校)", "is_standard": true, "step_ids": ["step_takarazuka_exam"] },
+    { "id": "route_manga_artist_standard", "occupation_id": "manga_artist", "name": "標準ルート(商業媒体への初有償掲載)", "is_standard": true, "step_ids": ["step_manga_first_paid_work"] },
+    { "id": "route_actor_standard", "occupation_id": "actor", "name": "標準ルート(初の有償出演契約)", "is_standard": true, "step_ids": ["step_actor_first_paid_work"] }
+  ],
+  "steps": [
+    { "id": "step_doctor_license", "route_id": "route_doctor_standard", "order": 1, "name": "医学部医学科卒業 → 医師国家試験合格 → 医籍登録", "description": "医師法上、医師国家試験の受験資格・医籍登録に年齢の規定は存在しない。", "rule_ids": ["rule_doctor_1"] },
+    { "id": "step_jra_school_exam", "route_id": "route_jra_jockey_school", "order": 1, "name": "JRA競馬学校 騎手課程 入学試験", "description": "JRA競馬学校 騎手課程への入学試験。年齢による受験資格の窓がある。", "rule_ids": ["rule_jra_1", "rule_jra_2", "rule_jra_3"] },
+    { "id": "step_boxer_license", "route_id": "route_pro_boxer_standard", "order": 1, "name": "プロテスト受験・公式戦出場資格の取得", "description": "プロテスト受験可能年齢と、公式戦(試合)出場可能年齢は分離している。", "rule_ids": ["rule_boxer_1", "rule_boxer_2", "rule_boxer_3", "rule_boxer_4"] },
+    { "id": "step_sumo_shindeshi_kensa", "route_id": "route_sumo_standard", "order": 1, "name": "新弟子検査(標準ルート)", "description": "日本相撲協会の新弟子検査。標準ルートには年齢上限がある。", "rule_ids": ["rule_sumo_1", "rule_sumo_2", "rule_sumo_3"] },
+    { "id": "step_sumo_fukidashi", "route_id": "route_sumo_qualified_achievement", "order": 1, "name": "有力アマチュア実績者の付出資格", "description": "全日本選手権優勝等の有力アマチュア実績を持つ者に対する代替ルート。", "rule_ids": ["rule_sumo_alt_1", "rule_sumo_alt_2"] },
+    { "id": "step_football_contract", "route_id": "route_pro_footballer_standard", "order": 1, "name": "プロA契約の締結", "description": "Jリーグ規約に基づくプロ契約。", "rule_ids": ["rule_football_1", "rule_football_2"] },
+    { "id": "step_youtuber_ypp_metrics", "route_id": "route_youtuber_standard", "order": 1, "name": "YPP参加基準(登録者数/視聴時間)の達成", "description": "登録者数・視聴時間等の指標条件。年齢とは無関係だが、基準自体は将来変更される(DYNAMIC)。", "rule_ids": ["rule_youtuber_metrics_current", "rule_youtuber_metrics_2027"] },
+    { "id": "step_youtuber_monetization_payout", "route_id": "route_youtuber_standard", "order": 2, "name": "広告収益の受取(AdSenseアカウント)", "description": "収益を実際に受け取るための年齢・保護者条件。", "rule_ids": ["rule_youtuber_payout_minor", "rule_youtuber_payout_adult"] },
+    { "id": "step_shogi_yondan", "route_id": "route_shogi_shoreikai", "order": 1, "name": "四段昇段(プロ入り)", "description": "新進棋士奨励会からの四段昇段。DREAM LINEそのもの。", "rule_ids": ["rule_shogi_1", "rule_shogi_2", "rule_shogi_3"] },
+    { "id": "step_shogi_pro_exam", "route_id": "route_shogi_pro_exam", "order": 1, "name": "プロ編入試験", "description": "アマチュア強豪向けの特別なプロ編入試験制度。", "rule_ids": ["rule_shogi_alt_1"] },
+    { "id": "step_takarazuka_exam", "route_id": "route_takarazuka_standard", "order": 1, "name": "宝塚音楽学校 受験", "description": "宝塚音楽学校の入学試験。応募資格は生年月日レンジで年度ごとに指定される(CYCLE_SCOPED)。", "rule_ids": ["rule_takarazuka_1", "rule_takarazuka_2", "rule_takarazuka_3"] },
+    { "id": "step_manga_first_paid_work", "route_id": "route_manga_artist_standard", "order": 1, "name": "商業媒体への初有償掲載・仕事", "description": "免許・資格制度が存在しない、定義的なDREAM LINE。", "rule_ids": ["rule_manga_1"] },
+    { "id": "step_actor_first_paid_work", "route_id": "route_actor_standard", "order": 1, "name": "初の有償演技契約・仕事", "description": "免許・資格制度が存在しない、定義的なDREAM LINE。労働基準法上の年少者保護規定は別軸。", "rule_ids": ["rule_actor_1"] }
+  ],
+  "rules": [
+    {
+      "id": "rule_doctor_1",
+      "step_id": "step_doctor_license",
+      "description": "医師法第4条(欠格事由)・第11条(受験資格)のいずれにも年齢の規定はない。受験資格は医学部医学科(6年制)卒業等の学歴要件のみ。",
+      "age_condition": { "kind": "any" },
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "source_ids": ["src_doctor_law", "src_doctor_secondary"],
+      "discovery_text": "年齢による正式な上限が見つかりません"
+    },
+    {
+      "id": "rule_jra_1",
+      "step_id": "step_jra_school_exam",
+      "description": "まだ受験できる年齢に達していません。",
+      "age_condition": { "kind": "lte", "age": 14 },
+      "status": "FUTURE",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_jra"]
+    },
+    {
+      "id": "rule_jra_2",
+      "step_id": "step_jra_school_exam",
+      "description": "JRA競馬学校 騎手課程の受験資格年齢の範囲内です(身体条件など他の受験資格も別途必要)。",
+      "age_condition": { "kind": "between", "min": 15, "max": 19 },
+      "status": "CONDITIONAL",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_jra"],
+      "discovery_text": "まだ開いている入口があります"
+    },
+    {
+      "id": "rule_jra_3",
+      "step_id": "step_jra_school_exam",
+      "description": "JRA競馬学校 騎手課程(標準ルート)の受験資格年齢を超えています。",
+      "age_condition": { "kind": "gte", "age": 20 },
+      "status": "ROUTE_CLOSED",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_jra"],
+      "discovery_text": "この入口は閉じました"
+    },
+    {
+      "id": "rule_boxer_1",
+      "step_id": "step_boxer_license",
+      "description": "プロテストを受験できる年齢にまだ達していません。",
+      "age_condition": { "kind": "lt", "age": 16 },
+      "status": "FUTURE",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_boxer"]
+    },
+    {
+      "id": "rule_boxer_2",
+      "step_id": "step_boxer_license",
+      "description": "プロテストの受験は可能ですが、公式戦(試合)への出場には17歳が必要です。試験年齢と試合年齢が分離しています。",
+      "age_condition": { "kind": "between", "min": 16, "max": 16 },
+      "status": "CONDITIONAL",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_boxer"],
+      "discovery_text": "まだ開いている入口があります"
+    },
+    {
+      "id": "rule_boxer_3",
+      "step_id": "step_boxer_license",
+      "description": "プロテスト受験・公式戦出場ともに可能な年齢です(その他の資格条件は別途あります)。",
+      "age_condition": { "kind": "between", "min": 17, "max": 34 },
+      "status": "CONDITIONAL",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_boxer"]
+    },
+    {
+      "id": "rule_boxer_4",
+      "step_id": "step_boxer_license",
+      "description": "新規プロライセンス取得(新人)の標準ルートは年齢により閉じます。既にライセンスを持つ選手の継続を意味するものではありません。",
+      "age_condition": { "kind": "gte", "age": 35 },
+      "status": "ROUTE_CLOSED",
+      "expiry_type": "HARD",
+      "source_ids": ["src_engine_spec_boxer"],
+      "discovery_text": "この入口は閉じました"
+    },
+    {
+      "id": "rule_sumo_1",
+      "step_id": "step_sumo_shindeshi_kensa",
+      "description": "新弟子検査(標準ルート)の対象年齢内です。",
+      "age_condition": { "kind": "lte", "age": 22 },
+      "status": "OPEN",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_engine_spec_sumo"],
+      "discovery_text": "まだ開いている入口があります"
+    },
+    {
+      "id": "rule_sumo_2",
+      "step_id": "step_sumo_shindeshi_kensa",
+      "description": "23歳の扱いはENGINE.mdの必須境界に明記がなく、正本データが無いため未確定です。",
+      "age_condition": { "kind": "between", "min": 23, "max": 23 },
+      "status": "UNKNOWN",
+      "expiry_type": "UNKNOWN",
+      "source_ids": ["src_engine_spec_sumo"]
+    },
+    {
+      "id": "rule_sumo_3",
+      "step_id": "step_sumo_shindeshi_kensa",
+      "description": "標準ルート(新弟子検査)は例外なく閉じます。",
+      "age_condition": { "kind": "gte", "age": 24 },
+      "status": "ROUTE_CLOSED",
+      "expiry_type": "HARD",
+      "source_ids": ["src_engine_spec_sumo"],
+      "discovery_text": "この入口は閉じました"
+    },
+    {
+      "id": "rule_sumo_alt_1",
+      "step_id": "step_sumo_fukidashi",
+      "description": "24歳未満では標準ルートが開いているため、この代替ルートの適用条件はENGINE.mdの必須境界に明記されていません。",
+      "age_condition": { "kind": "lt", "age": 24 },
+      "status": "UNKNOWN",
+      "expiry_type": "UNKNOWN",
+      "source_ids": ["src_engine_spec_sumo"]
+    },
+    {
+      "id": "rule_sumo_alt_2",
+      "step_id": "step_sumo_fukidashi",
+      "description": "全日本選手権優勝等の有力アマチュア実績を持つ場合、標準ルート閉鎖後も付出資格による代替ルートが条件付きで存在します。上限年齢の一次資料は未確認です。",
+      "age_condition": { "kind": "gte", "age": 24 },
+      "status": "ALTERNATIVE_AVAILABLE",
+      "expiry_type": "UNKNOWN",
+      "source_ids": ["src_engine_spec_sumo"],
+      "discovery_text": "ただし別の入口があります"
+    },
+    {
+      "id": "rule_football_1",
+      "step_id": "step_football_contract",
+      "description": "満15歳に達していないため、まだプロ契約の対象になりません。",
+      "age_condition": { "kind": "lt", "age": 15 },
+      "status": "FUTURE",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_football_jleague_2026"]
+    },
+    {
+      "id": "rule_football_2",
+      "step_id": "step_football_contract",
+      "description": "2026年4月施行の規則により、満15歳に達した日以後の最初の4月1日以降にプロ契約が可能です(本アプリは年齢のみで判定するため、4月1日をまたぐ厳密な前後関係は近似しています)。上限年齢の規定は見当たりません。",
+      "age_condition": { "kind": "gte", "age": 15 },
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "applicable_cycle": "2026年4月以降",
+      "source_ids": ["src_football_jleague_2026", "src_football_miura"],
+      "discovery_text": "年齢による正式な上限が見つかりません"
+    },
+    {
+      "id": "rule_youtuber_metrics_current",
+      "step_id": "step_youtuber_ypp_metrics",
+      "description": "登録者1,000人以上+直近12か月の視聴時間4,000時間以上、またはShorts視聴90日で1,000万回など。年齢は無関係。",
+      "age_condition": { "kind": "any" },
+      "status": "CONDITIONAL",
+      "expiry_type": "DYNAMIC",
+      "valid_until": "2027-01-31",
+      "source_ids": ["src_youtube_ypp_help"]
+    },
+    {
+      "id": "rule_youtuber_metrics_2027",
+      "step_id": "step_youtuber_ypp_metrics",
+      "description": "2027年2月1日から視聴時間8,000時間等に基準が引き上げられる予定です。要件は変更されうるためDYNAMIC。",
+      "age_condition": { "kind": "any" },
+      "status": "CONDITIONAL",
+      "expiry_type": "DYNAMIC",
+      "valid_from": "2027-02-01",
+      "source_ids": ["src_youtube_ypp_help"]
+    },
+    {
+      "id": "rule_youtuber_payout_minor",
+      "step_id": "step_youtuber_monetization_payout",
+      "description": "YPP参加自体は可能ですが、広告収益を受け取るAdSenseアカウントは保護者が所有・管理する必要があります。",
+      "age_condition": { "kind": "lt", "age": 18 },
+      "status": "CONDITIONAL",
+      "expiry_type": "CONDITIONAL",
+      "source_ids": ["src_youtube_ypp_help"]
+    },
+    {
+      "id": "rule_youtuber_payout_adult",
+      "step_id": "step_youtuber_monetization_payout",
+      "description": "自分名義のAdSenseアカウントで広告収益を受け取れます。",
+      "age_condition": { "kind": "gte", "age": 18 },
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "source_ids": ["src_youtube_ypp_help"],
+      "discovery_text": "年齢による正式な上限が見つかりません"
+    },
+    {
+      "id": "rule_shogi_1",
+      "step_id": "step_shogi_yondan",
+      "description": "新進棋士奨励会の標準的な進行年齢の範囲内です。",
+      "age_condition": { "kind": "lte", "age": 25 },
+      "status": "OPEN",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_shogi_shoreikai_rule"],
+      "discovery_text": "まだ開いている入口があります"
+    },
+    {
+      "id": "rule_shogi_2",
+      "step_id": "step_shogi_yondan",
+      "description": "満26歳の誕生日を含む三段リーグ終了までに四段になれなければ原則退会ですが、当該リーグで勝ち越せば次のリーグまで在籍延長できます。満29歳のリーグ終了時が最終上限です。",
+      "age_condition": { "kind": "between", "min": 26, "max": 29 },
+      "status": "CONDITIONAL",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_shogi_shoreikai_rule"]
+    },
+    {
+      "id": "rule_shogi_3",
+      "step_id": "step_shogi_yondan",
+      "description": "奨励会の年齢制限により、標準ルート(奨励会)での四段昇段の資格年齢を過ぎています。",
+      "age_condition": { "kind": "gte", "age": 30 },
+      "status": "ROUTE_CLOSED",
+      "expiry_type": "HARD",
+      "source_ids": ["src_shogi_shoreikai_rule"],
+      "discovery_text": "この入口は閉じました"
+    },
+    {
+      "id": "rule_shogi_alt_1",
+      "step_id": "step_shogi_pro_exam",
+      "description": "アマチュア強豪向けの特別なプロ編入試験制度が存在します(2014年に今泉健司氏が41歳で合格した実例あり)。年齢上限の一次資料は未確認です。",
+      "age_condition": { "kind": "any" },
+      "status": "ALTERNATIVE_AVAILABLE",
+      "expiry_type": "UNKNOWN",
+      "source_ids": ["src_shogi_imaizumi"],
+      "discovery_text": "ただし別の入口があります"
+    },
+    {
+      "id": "rule_takarazuka_1",
+      "step_id": "step_takarazuka_exam",
+      "description": "まだ応募資格年齢に達していません。",
+      "age_condition": { "kind": "lt", "age": 15 },
+      "status": "FUTURE",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_takarazuka_2026_boshu"]
+    },
+    {
+      "id": "rule_takarazuka_2",
+      "step_id": "step_takarazuka_exam",
+      "description": "2026年度(114期生)募集の応募資格は2007年4月2日〜2011年4月1日生まれです。年度により生年月日レンジは更新されるCYCLE_SCOPEDな数値です。",
+      "age_condition": { "kind": "between", "min": 15, "max": 19 },
+      "status": "CONDITIONAL",
+      "expiry_type": "ROUTE",
+      "applicable_cycle": "2026年度(114期生)",
+      "source_ids": ["src_takarazuka_2026_boshu"],
+      "discovery_text": "まだ開いている入口があります"
+    },
+    {
+      "id": "rule_takarazuka_3",
+      "step_id": "step_takarazuka_exam",
+      "description": "宝塚音楽学校(標準ルート)の応募資格年齢を超えています。",
+      "age_condition": { "kind": "gte", "age": 20 },
+      "status": "ROUTE_CLOSED",
+      "expiry_type": "ROUTE",
+      "source_ids": ["src_takarazuka_2026_boshu"],
+      "discovery_text": "この入口は閉じました"
+    },
+    {
+      "id": "rule_manga_1",
+      "step_id": "step_manga_first_paid_work",
+      "description": "漫画家という職業には免許・年齢制限の制度が存在しません。DREAM LINEは『初の有償商業漫画仕事・掲載』という定義的な地点です。",
+      "age_condition": { "kind": "any" },
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "source_ids": ["src_manga_no_license"],
+      "discovery_text": "年齢による正式な上限が見つかりません"
+    },
+    {
+      "id": "rule_actor_1",
+      "step_id": "step_actor_first_paid_work",
+      "description": "俳優業そのものへの免許制度は存在しません。ただし労働基準法上、年少者(児童)の使用には一般的な保護規定があり、原則満15歳に達した日以後の最初の3月31日まで制限されますが、『映画の製作又は演劇の事業』は行政官庁の許可を得れば満13歳未満でも使用可能という特則があります。これは職業への参入ゲートではなく労働条件の保護規定です。",
+      "age_condition": { "kind": "any" },
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "source_ids": ["src_actor_no_license", "src_actor_labor_law_minors"],
+      "discovery_text": "年齢による正式な上限が見つかりません"
+    }
+  ]
+}
