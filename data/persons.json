@@ -14,5 +14,8 @@
   { "id": "p_nakamura_shunsuke", "name": "中村俊輔", "occupation_id": "pro_footballer", "summary": "2000年、22歳でJリーグ最優秀選手賞を受賞(歴代最年少)。", "source_ids": ["src_nakamura_shunsuke_mvp"] },
   { "id": "p_nakamura_kengo", "name": "中村憲剛", "occupation_id": "pro_footballer", "summary": "2016年、36歳でJリーグ最優秀選手賞を受賞(歴代最年長)。", "source_ids": ["src_nakamura_kengo_mvp"] },
   { "id": "p_uoto", "name": "魚豊", "occupation_id": "manga_artist", "summary": "『チ。─地球の運動について─』で手塚治虫文化賞マンガ大賞を24歳で受賞(同賞史上最年少)。", "source_ids": ["src_uoto_tezuka_award"] },
-  { "id": "p_habu_yoshiharu", "name": "羽生善治", "occupation_id": "shogi_player", "summary": "19歳で竜王を初獲得、25歳で史上初の七冠独占、47歳で史上初の永世七冠を達成。", "source_ids": ["src_habu_yoshiharu"] }
+  { "id": "p_habu_yoshiharu", "name": "羽生善治", "occupation_id": "shogi_player", "summary": "19歳で竜王を初獲得、25歳で史上初の七冠独占、47歳で史上初の永世七冠を達成。", "source_ids": ["src_habu_yoshiharu"] },
+  { "id": "p_kawahara_naoyuki", "name": "川原尚行", "occupation_id": "doctor", "summary": "外務省医務官を経て、40歳でNPO法人ロシナンテスを設立しスーダン等で医療支援活動。情熱大陸で特集された。", "source_ids": ["src_kawahara_naoyuki"] },
+  { "id": "p_hachi_youtuber", "name": "葉一", "occupation_id": "youtuber", "summary": "27歳で教育系YouTubeチャンネルを開設。情熱大陸で特集された。", "source_ids": ["src_hachi_youtuber"] },
+  { "id": "p_dan_rei", "name": "檀れい", "occupation_id": "takarazuka_performer", "summary": "宝塚歌劇団星組娘役トップを経て退団、映画初出演で日本アカデミー賞主演女優賞と新人俳優賞を同時受賞。", "source_ids": ["src_dan_rei"] }
 ]

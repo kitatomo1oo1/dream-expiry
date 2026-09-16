@@ -295,5 +295,77 @@
     "date_precision": "day",
     "description": "47歳で竜王位通算7期目を獲得し永世竜王の資格を得て、将棋界史上初の永世七冠となった。",
     "source_ids": ["src_habu_yoshiharu"]
+  },
+  {
+    "id": "le_kawahara_1",
+    "person_id": "p_kawahara_naoyuki",
+    "type": "DREAM_LINE",
+    "date": "1992",
+    "date_precision": "year",
+    "description": "九州大学医学部を卒業し医師となる。以後、外務省医務官としてタンザニア・スーダン等の日本大使館に勤務。",
+    "source_ids": ["src_kawahara_naoyuki"]
+  },
+  {
+    "id": "le_kawahara_2",
+    "person_id": "p_kawahara_naoyuki",
+    "type": "CAREER_CHANGE",
+    "date": "2005-01",
+    "date_precision": "month",
+    "description": "外務省を退職。同年4月からスーダンで医療活動を開始した。",
+    "source_ids": ["src_kawahara_naoyuki"]
+  },
+  {
+    "id": "le_kawahara_3",
+    "person_id": "p_kawahara_naoyuki",
+    "type": "MILESTONE",
+    "date": "2006-05",
+    "date_precision": "month",
+    "description": "40歳でNPO法人ロシナンテスを設立し、スーダン等で医療・水支援活動を継続している。情熱大陸で特集された。",
+    "source_ids": ["src_kawahara_naoyuki"]
+  },
+  {
+    "id": "le_hachi_1",
+    "person_id": "p_hachi_youtuber",
+    "type": "DREAM_START",
+    "date": "2012-06-01",
+    "date_precision": "day",
+    "description": "27歳で、営業マン・塾講師を経て教育系YouTubeチャンネル「とある男が授業をしてみた」を開設。",
+    "source_ids": ["src_hachi_youtuber"]
+  },
+  {
+    "id": "le_hachi_2",
+    "person_id": "p_hachi_youtuber",
+    "type": "MILESTONE",
+    "date": "2020-11",
+    "date_precision": "month",
+    "description": "登録者120万人となり、情熱大陸で特集された。2024年2月時点では登録者199万人。",
+    "source_ids": ["src_hachi_youtuber"]
+  },
+  {
+    "id": "le_dan_rei_1",
+    "person_id": "p_dan_rei",
+    "type": "MILESTONE",
+    "date": "2003",
+    "date_precision": "year",
+    "description": "宝塚歌劇団星組の娘役トップに就任。",
+    "source_ids": ["src_dan_rei"]
+  },
+  {
+    "id": "le_dan_rei_2",
+    "person_id": "p_dan_rei",
+    "type": "CAREER_CHANGE",
+    "date": "2005",
+    "date_precision": "year",
+    "description": "34歳で宝塚歌劇団を退団。",
+    "source_ids": ["src_dan_rei"]
+  },
+  {
+    "id": "le_dan_rei_3",
+    "person_id": "p_dan_rei",
+    "type": "MILESTONE",
+    "date": "2006",
+    "date_precision": "year",
+    "description": "山田洋次監督『武士の一分』で映画初出演し、日本アカデミー賞優秀主演女優賞と新人俳優賞を同時受賞。",
+    "source_ids": ["src_dan_rei"]
   }
 ]
