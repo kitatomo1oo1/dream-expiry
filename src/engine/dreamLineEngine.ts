@@ -53,3 +53,30 @@ export function computeDiscoveries(
   }
   return discoveries;
 }
+
+/**
+ * 年齢スライダーを一度も動かしていない初回表示時、この夢に年齢による関門が
+ * そもそも存在しないなら(=どのStepもNO_UPPER_DEADLINE_FOUND)、スライダーを
+ * 動かしても何も起きないという「空振り」体験にせず、その事実自体を発見として渡す。
+ */
+export function computeInitialInsight(
+  ds: DataSet,
+  occupationId: string,
+  age: number,
+  referenceDate: Date = new Date()
+): Discovery[] {
+  const evaluation = evaluateOccupation(ds, occupationId, age, referenceDate);
+  const allSteps = evaluation.routes.flatMap((route) => route.steps);
+  const hasNoAgeGateAtAll = allSteps.length > 0 && allSteps.every((step) => step.expiry_type === "NO_UPPER_DEADLINE_FOUND");
+  if (!hasNoAgeGateAtAll) return [];
+  return [
+    {
+      rule_id: "",
+      step_id: "",
+      route_id: "",
+      status: evaluation.status,
+      expiry_type: "NO_UPPER_DEADLINE_FOUND",
+      text: "この夢には、年齢による関門が見つかりません。年齢を動かしても、この判定は変わりません。",
+    },
+  ];
+}

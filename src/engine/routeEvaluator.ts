@@ -88,3 +88,37 @@ export function evaluateOccupation(
 
   return { occupation_id: occupationId, age, status, routes, alternative_route };
 }
+
+const MAX_AGE_SCAN = 99;
+
+/**
+ * 「この夢の賞味期限は何歳か」を、標準ルート単体のStatusから計算する。
+ * 代替ルートの有無は考慮しない(代替ルートが別にあることはUIで別途伝える。
+ * ここで言う賞味期限は「標準ルートが閉じる年齢」という意味)。
+ * ages[T..MAX_AGE_SCAN] が全てROUTE_CLOSEDになる最小のTを返す。
+ * そのようなTが存在しない(=標準ルートが年齢で閉じることが確認できない)場合はnull。
+ */
+export function computeStandardRouteExpiryAge(
+  ds: DataSet,
+  occupationId: string,
+  referenceDate: Date = new Date()
+): number | null {
+  const occupation = ds.occupations.find((o) => o.id === occupationId);
+  if (!occupation) throw new Error(`Unknown occupation: ${occupationId}`);
+  const standardRouteId = occupation.route_ids
+    .map((id) => findRoute(ds, id))
+    .find((r) => r.is_standard)?.id;
+  if (!standardRouteId) return null;
+
+  const statuses: Status[] = [];
+  for (let age = 0; age <= MAX_AGE_SCAN; age++) {
+    statuses.push(evaluateRoute(ds, standardRouteId, age, referenceDate).status);
+  }
+
+  for (let t = 0; t <= MAX_AGE_SCAN; t++) {
+    if (statuses.slice(t).every((s) => s === "ROUTE_CLOSED")) {
+      return t;
+    }
+  }
+  return null;
+}

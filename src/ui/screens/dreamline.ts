@@ -49,16 +49,15 @@ export function renderDreamLine(store: Store): HTMLElement {
   const backButton = el("button", { class: "btn-link", type: "button" }, ["← 戻る"]);
   backButton.addEventListener("click", () => store.setState({ phase: "age" }));
 
+  const bannerChildren = [el("p", { class: "dreamline-transition" }, [openingLine(evaluation)])];
+  if (shouldShowNoDeadlineCaution(evaluation)) {
+    bannerChildren.push(el("p", { class: "dreamline-caution" }, ["締切がないことと簡単なことは別です。"]));
+  }
+
   const container = el("section", { class: "screen screen-dreamline" }, [
     backButton,
-    el("p", { class: "dreamline-transition" }, [openingLine(evaluation)]),
+    el("div", { class: `dreamline-banner status-${evaluation.status}` }, bannerChildren),
   ]);
-
-  if (shouldShowNoDeadlineCaution(evaluation)) {
-    container.appendChild(
-      el("p", { class: "dreamline-caution" }, ["締切がないことと簡単なことは別です。"])
-    );
-  }
 
   container.appendChild(el("h2", {}, ["DREAM LINE"]));
   container.appendChild(

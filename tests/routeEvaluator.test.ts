@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { loadDataSet } from "../src/data/loader";
-import { evaluateOccupation } from "../src/engine/routeEvaluator";
+import { evaluateOccupation, computeStandardRouteExpiryAge } from "../src/engine/routeEvaluator";
 
 const ds = loadDataSet();
 const REF = new Date("2026-09-17");
@@ -8,6 +8,27 @@ const REF = new Date("2026-09-17");
 function statusOf(occupationId: string, age: number) {
   return evaluateOccupation(ds, occupationId, age, REF).status;
 }
+
+describe("computeStandardRouteExpiryAge — 「賞味期限」見出し用の標準ルート閉鎖年齢", () => {
+  it("ENGINE.md必須境界と一致する(JRA20/Boxer35/Sumo24/宝塚20)", () => {
+    expect(computeStandardRouteExpiryAge(ds, "jra_jockey", REF)).toBe(20);
+    expect(computeStandardRouteExpiryAge(ds, "pro_boxer", REF)).toBe(35);
+    expect(computeStandardRouteExpiryAge(ds, "sumo_wrestler", REF)).toBe(24);
+    expect(computeStandardRouteExpiryAge(ds, "takarazuka_performer", REF)).toBe(20);
+  });
+  it("奨励会の年齢制限(30歳)と一致する(プロ編入試験という代替ルートの有無は考慮しない)", () => {
+    expect(computeStandardRouteExpiryAge(ds, "shogi_player", REF)).toBe(30);
+  });
+  it("育成年代パイプラインが閉じる23歳と一致する(プロサッカー選手)", () => {
+    expect(computeStandardRouteExpiryAge(ds, "pro_footballer", REF)).toBe(23);
+  });
+  it("年齢による上限が見つからない夢はnull(医師・漫画家・俳優・YouTuber)", () => {
+    expect(computeStandardRouteExpiryAge(ds, "doctor", REF)).toBeNull();
+    expect(computeStandardRouteExpiryAge(ds, "manga_artist", REF)).toBeNull();
+    expect(computeStandardRouteExpiryAge(ds, "actor", REF)).toBeNull();
+    expect(computeStandardRouteExpiryAge(ds, "youtuber", REF)).toBeNull();
+  });
+});
 
 describe("JRA騎手 — ENGINE.md必須境界 (14 FUTURE / 15,19 CONDITIONAL / 20 school route closed)", () => {
   it("14歳以下はFUTURE", () => {
