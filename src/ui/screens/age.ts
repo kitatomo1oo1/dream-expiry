@@ -125,6 +125,10 @@ export function renderAge(store: Store): HTMLElement {
     )
   );
 
+  const sliderHint = el("p", { class: "age-slider-hint" }, [
+    "まずは今のあなたの年齢に合わせて、それから動かしてみましょう。",
+  ]);
+
   const evaluation = evaluateOccupation(ds, occupation.id, state.age);
   const timelineSection = el("div", { class: "timeline-section" });
   for (const route of evaluation.routes) {
@@ -174,6 +178,7 @@ export function renderAge(store: Store): HTMLElement {
     el("h2", {}, [dream?.name ?? occupation.name]),
     renderExpiryHeadline(ds, occupation.id),
     ageValue,
+    sliderHint,
     slider,
     datalist,
     tickRow,

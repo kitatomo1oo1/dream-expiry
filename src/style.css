@@ -101,6 +101,13 @@ h2 {
   margin: 0;
 }
 
+.heading-subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-left: 6px;
+}
+
 h3.route-name {
   font-size: 1rem;
   color: var(--text-dim);
@@ -519,5 +526,30 @@ h3.route-name {
 }
 
 .after-empty {
+  color: var(--text-dim);
+}
+
+.reflect-remaining {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.age-slider-hint {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.dream-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dream-teaser {
+  font-size: 0.75rem;
   color: var(--text-dim);
 }

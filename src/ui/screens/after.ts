@@ -14,7 +14,10 @@ export function renderAfter(store: Store): HTMLElement {
   const backButton = el("button", { class: "btn-link", type: "button" }, ["← 戻る"]);
   backButton.addEventListener("click", () => store.setState({ phase: "dreamline" }));
 
-  const container = el("section", { class: "screen screen-after" }, [backButton, el("h2", {}, ["AFTER"])]);
+  const container = el("section", { class: "screen screen-after" }, [
+    backButton,
+    el("h2", {}, ["AFTER", el("span", { class: "heading-subtitle" }, ["(その後)"])]),
+  ]);
 
   if (persons.length === 0) {
     container.appendChild(
