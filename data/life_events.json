@@ -241,5 +241,59 @@
     "date_precision": "year",
     "description": "『ぐるりのこと。』の演技が評価され、翌2009年に第51回ブルーリボン賞新人賞を受賞。最高齢での新人賞受賞と報じられている。",
     "source_ids": ["src_actor_lily_franky"]
+  },
+  {
+    "id": "le_nakamura_shunsuke_1",
+    "person_id": "p_nakamura_shunsuke",
+    "type": "MILESTONE",
+    "date": "2000",
+    "date_precision": "year",
+    "description": "22歳でJリーグ最優秀選手賞(MVP)を受賞。歴代最年少での受賞となった。",
+    "source_ids": ["src_nakamura_shunsuke_mvp"]
+  },
+  {
+    "id": "le_nakamura_kengo_1",
+    "person_id": "p_nakamura_kengo",
+    "type": "MILESTONE",
+    "date": "2016",
+    "date_precision": "year",
+    "description": "36歳でJリーグ最優秀選手賞(MVP)を受賞。歴代最年長での受賞となった。",
+    "source_ids": ["src_nakamura_kengo_mvp"]
+  },
+  {
+    "id": "le_uoto_1",
+    "person_id": "p_uoto",
+    "type": "MILESTONE",
+    "date": "2022",
+    "date_precision": "year",
+    "description": "『チ。─地球の運動について─』で第26回手塚治虫文化賞マンガ大賞を24歳で受賞。同賞史上最年少での受賞となった。",
+    "source_ids": ["src_uoto_tezuka_award"]
+  },
+  {
+    "id": "le_habu_1",
+    "person_id": "p_habu_yoshiharu",
+    "type": "MILESTONE",
+    "date": "1989-12-27",
+    "date_precision": "day",
+    "description": "19歳3か月で竜王位を初獲得。",
+    "source_ids": ["src_habu_yoshiharu"]
+  },
+  {
+    "id": "le_habu_2",
+    "person_id": "p_habu_yoshiharu",
+    "type": "MILESTONE",
+    "date": "1996-02-14",
+    "date_precision": "day",
+    "description": "25歳で王将位を奪取し、将棋界史上初の七冠独占を達成。",
+    "source_ids": ["src_habu_yoshiharu"]
+  },
+  {
+    "id": "le_habu_3",
+    "person_id": "p_habu_yoshiharu",
+    "type": "MILESTONE",
+    "date": "2017-12-05",
+    "date_precision": "day",
+    "description": "47歳で竜王位通算7期目を獲得し永世竜王の資格を得て、将棋界史上初の永世七冠となった。",
+    "source_ids": ["src_habu_yoshiharu"]
   }
 ]

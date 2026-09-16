@@ -10,5 +10,9 @@
   { "id": "p_hikakin", "name": "HIKAKIN", "occupation_id": "youtuber", "summary": "活動休止を発表し、約1週間後に活動を再開した実例。", "source_ids": ["src_youtube_hikakin_hiatus"] },
   { "id": "p_togashi_yoshihiro", "name": "冨樫義博", "occupation_id": "manga_artist", "summary": "『HUNTER×HUNTER』作者。連載の再開と休載を繰り返している。", "source_ids": ["src_manga_togashi"] },
   { "id": "p_ashida_mana", "name": "芦田愛菜", "occupation_id": "actor", "summary": "3歳から芸能活動、2009年子役デビュー。子役から成人女優へ継続的なキャリアを積む。", "source_ids": ["src_actor_ashida"] },
-  { "id": "p_lily_franky", "name": "リリー・フランキー", "occupation_id": "actor", "summary": "40代で俳優デビュー。ブルーリボン賞新人賞を受賞した実例。", "source_ids": ["src_actor_lily_franky"] }
+  { "id": "p_lily_franky", "name": "リリー・フランキー", "occupation_id": "actor", "summary": "40代で俳優デビュー。ブルーリボン賞新人賞を受賞した実例。", "source_ids": ["src_actor_lily_franky"] },
+  { "id": "p_nakamura_shunsuke", "name": "中村俊輔", "occupation_id": "pro_footballer", "summary": "2000年、22歳でJリーグ最優秀選手賞を受賞(歴代最年少)。", "source_ids": ["src_nakamura_shunsuke_mvp"] },
+  { "id": "p_nakamura_kengo", "name": "中村憲剛", "occupation_id": "pro_footballer", "summary": "2016年、36歳でJリーグ最優秀選手賞を受賞(歴代最年長)。", "source_ids": ["src_nakamura_kengo_mvp"] },
+  { "id": "p_uoto", "name": "魚豊", "occupation_id": "manga_artist", "summary": "『チ。─地球の運動について─』で手塚治虫文化賞マンガ大賞を24歳で受賞(同賞史上最年少)。", "source_ids": ["src_uoto_tezuka_award"] },
+  { "id": "p_habu_yoshiharu", "name": "羽生善治", "occupation_id": "shogi_player", "summary": "19歳で竜王を初獲得、25歳で史上初の七冠独占、47歳で史上初の永世七冠を達成。", "source_ids": ["src_habu_yoshiharu"] }
 ]
