@@ -583,5 +583,32 @@
     "date_precision": "day",
     "description": "還暦後の騎乗はかなわず引退を発表。JRA平地2339勝・障害2勝、通算2341勝(歴代6位)。JRA現役騎手の最高齢引退記録となった。",
     "source_ids": ["src_shibata_yoshiomi"]
+  },
+  {
+    "id": "le_abiko_1",
+    "person_id": "p_abiko_takamasa",
+    "type": "SETBACK",
+    "date": "2018-01",
+    "date_precision": "month",
+    "description": "39歳、水戸ホーリーホック(J2)に練習生として参加。長いブランクを経ての再挑戦だった。",
+    "source_ids": ["src_abiko_takamasa"]
+  },
+  {
+    "id": "le_abiko_2",
+    "person_id": "p_abiko_takamasa",
+    "type": "DREAM_LINE",
+    "date": "2018-03-31",
+    "date_precision": "day",
+    "description": "40歳、水戸ホーリーホックと正式契約。クラウドファンディングで費用を募り、象徴的な『年俸10円』での契約となった。",
+    "source_ids": ["src_abiko_takamasa"]
+  },
+  {
+    "id": "le_abiko_3",
+    "person_id": "p_abiko_takamasa",
+    "type": "MILESTONE",
+    "date": "2019-03-10",
+    "date_precision": "day",
+    "description": "41歳、YS横浜(YSCC)でJリーグ初出場。ジーコが持つJリーグ最年長デビュー記録を更新した。",
+    "source_ids": ["src_abiko_takamasa"]
   }
 ]

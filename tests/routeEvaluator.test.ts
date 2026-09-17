@@ -21,14 +21,13 @@ describe("computeStandardRouteExpiryAge — 「賞味期限」見出し用の標
   it("奨励会の年齢制限(30歳)と一致する(プロ編入試験という代替ルートの有無は考慮しない)", () => {
     expect(computeStandardRouteExpiryAge(ds, "shogi_player", REF)).toBe(30);
   });
-  it("育成年代パイプラインが閉じる23歳と一致する(プロサッカー選手)", () => {
-    expect(computeStandardRouteExpiryAge(ds, "pro_footballer", REF)).toBe(23);
-  });
-  it("年齢による上限が見つからない夢はnull(医師・漫画家・俳優・YouTuber)", () => {
+  it("年齢による上限が見つからない夢はnull(医師・漫画家・俳優・YouTuber・プロサッカー選手)", () => {
     expect(computeStandardRouteExpiryAge(ds, "doctor", REF)).toBeNull();
     expect(computeStandardRouteExpiryAge(ds, "manga_artist", REF)).toBeNull();
     expect(computeStandardRouteExpiryAge(ds, "actor", REF)).toBeNull();
     expect(computeStandardRouteExpiryAge(ds, "youtuber", REF)).toBeNull();
+    // プロサッカー選手: 23歳以降はCONDITIONAL(安彦考真氏の実例あり)であり、ROUTE_CLOSEDではないためnull。
+    expect(computeStandardRouteExpiryAge(ds, "pro_footballer", REF)).toBeNull();
   });
 });
 
@@ -182,7 +181,7 @@ describe("YouTuber — DYNAMICな年齢ゲート(収益受取のみ年齢依存)
   });
 });
 
-describe("プロサッカー選手 — 契約締結そのものに年齢上限はないが、育成年代からの入口は実質22歳前後で閉じる", () => {
+describe("プロサッカー選手 — 契約締結そのものに年齢上限はないが、育成年代からの入口は23歳以降は非常に狭くなる(閉鎖ではない)", () => {
   it("15歳未満はFUTURE", () => {
     expect(statusOf("pro_footballer", 14)).toBe("FUTURE");
   });
@@ -190,12 +189,12 @@ describe("プロサッカー選手 — 契約締結そのものに年齢上限�
     expect(statusOf("pro_footballer", 15)).toBe("OPEN");
     expect(statusOf("pro_footballer", 22)).toBe("OPEN");
   });
-  it("23歳以上はゼロから始める育成年代ルートがROUTE_CLOSEDになり、全体もROUTE_CLOSED(契約締結ステップ単体は年齢上限なしのまま)", () => {
+  it("23歳以上は育成年代ルートがCONDITIONAL(安彦考真氏の実例あり、閉鎖ではない)になり、全体もCONDITIONAL", () => {
     const evaluation = evaluateOccupation(ds, "pro_footballer", 58, REF);
-    expect(evaluation.status).toBe("ROUTE_CLOSED");
+    expect(evaluation.status).toBe("CONDITIONAL");
     const youthStep = evaluation.routes[0].steps.find((s) => s.step_id === "step_football_youth_pathway");
     const contractStep = evaluation.routes[0].steps.find((s) => s.step_id === "step_football_contract");
-    expect(youthStep?.status).toBe("ROUTE_CLOSED");
+    expect(youthStep?.status).toBe("CONDITIONAL");
     expect(contractStep?.status).toBe("OPEN");
     expect(contractStep?.expiry_type).toBe("NO_UPPER_DEADLINE_FOUND");
   });

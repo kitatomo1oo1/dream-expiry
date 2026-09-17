@@ -44,6 +44,23 @@ export function narrativeLine(status: Status, age: number, stepName: string): st
 }
 
 /**
+ * Statusごとに「挑める」ことの確信度合いを変えた動詞句。CONDITIONAL/UNKNOWNを
+ * OPENと同じ調子で語ると、「閉じてはいないが非常に狭い」実情を過信させてしまう
+ * (例: プロサッカー選手を44歳から目指す場合、育成年代からの入口ではなく
+ * 社会人リーグ経由のトライアウトという極めて狭い道になる)。
+ */
+function reachPhrase(status: Status, stepName: string): string {
+  switch (status) {
+    case "CONDITIONAL":
+      return `条件付きで${stepName}に挑めます`;
+    case "UNKNOWN":
+      return `${stepName}に挑めるかどうかは、確認できていません`;
+    default:
+      return `${stepName}に挑めます`;
+  }
+}
+
+/**
  * 「賞味期限内であるからには、夢をかなえる道筋がある」という前提のもと、
  * startAgeからDREAM LINEまでのJourneyStoryを、一連の物語として文章化する。
  * 単発のStatus表示ではなく、次に何歳で何が起きて、最終的にどこへ辿り着くかを繋げる。
@@ -61,23 +78,29 @@ export function buildJourneyNarrative(
     }
 
     const previousAge = index === 0 ? startAge : story.beats[index - 1].age;
+    const phrase = reachPhrase(beat.status, beat.step_name);
 
     if (index === 0) {
       if (beat.age === startAge) {
-        sentences.push(`${startAge}歳の今、${beat.step_name}に挑めます。`);
+        sentences.push(`${startAge}歳の今、${phrase}。`);
       } else {
-        sentences.push(
-          `${startAge}歳の今はまだ${beat.step_name}に挑めません。${beat.age}歳になれば、挑めるようになります。`
-        );
+        sentences.push(`${startAge}歳の今はまだ${beat.step_name}に挑めません。${beat.age}歳になれば、${phrase}。`);
       }
     } else if (beat.age === previousAge) {
-      sentences.push(`同時に、${beat.step_name}にも挑めます。`);
+      sentences.push(`同時に、${phrase}。`);
     } else {
-      sentences.push(`そこから${beat.age}歳で、${beat.step_name}に挑めます。`);
+      sentences.push(`そこから${beat.age}歳で、${phrase}。`);
     }
   });
 
-  if (story.reachable && dreamLineDescription) {
+  const hasCaveat =
+    story.used_alternative || story.beats.some((b) => b.status === "CONDITIONAL" || b.status === "UNKNOWN");
+
+  if (story.reachable && dreamLineDescription && hasCaveat) {
+    sentences.push(
+      `そして、${dreamLineDescription}という地点に辿り着く道が、確かにあります。ただしその道は、誰にでも同じように開いているわけではありません。これが、${startAge}歳から始めるあなたの物語です。`
+    );
+  } else if (story.reachable && dreamLineDescription) {
     sentences.push(`そして、${dreamLineDescription}という地点に辿り着きます。これが、${startAge}歳から始めるあなたの物語です。`);
   } else if (!story.reachable && sentences.length === 0) {
     sentences.push(`${startAge}歳の今、確認できている入口が見つかりません。`);

@@ -27,5 +27,6 @@
   { "id": "p_yamamoto_masa", "name": "山本昌", "occupation_id": "pro_baseball", "summary": "日本プロ野球史上唯一、50歳まで現役を続けた投手。", "source_ids": ["src_yamamoto_masa"] },
   { "id": "p_shinjo_tsuyoshi", "name": "新庄剛志", "occupation_id": "pro_baseball", "summary": "18歳でプロ入り、引退から16年後に日本ハムファイターズ監督に就任。「記憶に残る選手」として愛される。", "source_ids": ["src_shinjo_tsuyoshi"] },
   { "id": "p_fujita_nanako", "name": "藤田菜七子", "occupation_id": "jra_jockey", "summary": "18歳、JRA16年ぶりの女性騎手としてデビュー。女性騎手として初めてJRA重賞を制覇。", "source_ids": ["src_fujita_nanako"] },
-  { "id": "p_shibata_yoshiomi", "name": "柴田善臣", "occupation_id": "jra_jockey", "summary": "JRA史上初の現役還暦(60歳)騎手。2026年9月、60歳で引退。JRA現役騎手の最高齢引退記録。", "source_ids": ["src_shibata_yoshiomi"] }
+  { "id": "p_shibata_yoshiomi", "name": "柴田善臣", "occupation_id": "jra_jockey", "summary": "JRA史上初の現役還暦(60歳)騎手。2026年9月、60歳で引退。JRA現役騎手の最高齢引退記録。", "source_ids": ["src_shibata_yoshiomi"] },
+  { "id": "p_abiko_takamasa", "name": "安彦考真", "occupation_id": "pro_footballer", "summary": "39歳で練習生、40歳で契約、41歳でJリーグデビュー。ジーコの最年長デビュー記録を更新。", "source_ids": ["src_abiko_takamasa"] }
 ]

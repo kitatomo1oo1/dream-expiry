@@ -172,12 +172,12 @@
     {
       "id": "rule_football_youth_2",
       "step_id": "step_football_youth_pathway",
-      "description": "調査した範囲では、大学サッカー(卒業は概ね22歳前後)を最後に、ゼロから始めて到達できる確立された育成ルートは見当たりません。これは大学年代までの構造を近似した数値であり、厳密な制度上の年齢上限ではありません。高校からサッカーを本格的に始めて数年でプロ入りした例(西部洋平氏)はありますが、極めて例外的です。",
+      "description": "大学サッカー(卒業は概ね22歳前後)を最後に、ゼロから始めて到達できる確立された育成ルートは見当たりません。ただし完全に閉じているわけでもありません。社会人リーグ経由のトライアウト制度自体は年齢を問わず存在しますが、大半のクラブは一般選手のトライアウトを受け入れていません。安彦考真氏は39歳で水戸ホーリーホックの練習生となり、40歳で契約(異例の『年俸10円』)、41歳でJリーグデビューし、ジーコの持つJリーグ最年長デビュー記録を更新した実例があります。ただしこの実例も『ゼロから』ではなく、若い頃からの断続的なプレー経験を土台にしています。",
       "age_condition": { "kind": "gte", "age": 23 },
-      "status": "ROUTE_CLOSED",
-      "expiry_type": "HARD",
-      "source_ids": ["src_football_youth_pathway"],
-      "discovery_text": "この入口は閉じました"
+      "status": "CONDITIONAL",
+      "expiry_type": "UNKNOWN",
+      "source_ids": ["src_football_youth_pathway", "src_abiko_takamasa"],
+      "discovery_text": "この入口は非常に狭いですが、閉じてはいません"
     },
     {
       "id": "rule_football_1",
