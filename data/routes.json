@@ -11,7 +11,8 @@
     { "id": "route_shogi_pro_exam", "occupation_id": "shogi_player", "name": "代替ルート(プロ編入試験)", "is_standard": false, "step_ids": ["step_shogi_pro_exam"] },
     { "id": "route_takarazuka_standard", "occupation_id": "takarazuka_performer", "name": "標準ルート(宝塚音楽学校)", "is_standard": true, "step_ids": ["step_takarazuka_exam"] },
     { "id": "route_manga_artist_standard", "occupation_id": "manga_artist", "name": "標準ルート(商業媒体への初有償掲載)", "is_standard": true, "step_ids": ["step_manga_first_paid_work"] },
-    { "id": "route_actor_standard", "occupation_id": "actor", "name": "標準ルート(初の有償出演契約)", "is_standard": true, "step_ids": ["step_actor_first_paid_work"] }
+    { "id": "route_actor_standard", "occupation_id": "actor", "name": "標準ルート(初の有償出演契約)", "is_standard": true, "step_ids": ["step_actor_first_paid_work"] },
+    { "id": "route_pro_baseball_standard", "occupation_id": "pro_baseball", "name": "標準ルート(NPBドラフト → 支配下選手契約)", "is_standard": true, "step_ids": ["step_pro_baseball_draft"] }
   ],
   "steps": [
     { "id": "step_doctor_license", "route_id": "route_doctor_standard", "order": 1, "name": "医学部医学科卒業 → 医師国家試験合格 → 医籍登録", "description": "医師法上、医師国家試験の受験資格・医籍登録に年齢の規定は存在しない。", "rule_ids": ["rule_doctor_1"] },
@@ -27,7 +28,8 @@
     { "id": "step_shogi_pro_exam", "route_id": "route_shogi_pro_exam", "order": 1, "name": "プロ編入試験", "description": "アマチュア強豪向けの特別なプロ編入試験制度。", "rule_ids": ["rule_shogi_alt_1"] },
     { "id": "step_takarazuka_exam", "route_id": "route_takarazuka_standard", "order": 1, "name": "宝塚音楽学校 受験", "description": "宝塚音楽学校の入学試験。応募資格は生年月日レンジで年度ごとに指定される(CYCLE_SCOPED)。", "rule_ids": ["rule_takarazuka_1", "rule_takarazuka_2", "rule_takarazuka_3"] },
     { "id": "step_manga_first_paid_work", "route_id": "route_manga_artist_standard", "order": 1, "name": "商業媒体への初有償掲載・仕事", "description": "免許・資格制度が存在しない、定義的なDREAM LINE。", "rule_ids": ["rule_manga_1"] },
-    { "id": "step_actor_first_paid_work", "route_id": "route_actor_standard", "order": 1, "name": "初の有償演技契約・仕事", "description": "免許・資格制度が存在しない、定義的なDREAM LINE。労働基準法上の年少者保護規定は別軸。", "rule_ids": ["rule_actor_1"] }
+    { "id": "step_actor_first_paid_work", "route_id": "route_actor_standard", "order": 1, "name": "初の有償演技契約・仕事", "description": "免許・資格制度が存在しない、定義的なDREAM LINE。労働基準法上の年少者保護規定は別軸。", "rule_ids": ["rule_actor_1"] },
+    { "id": "step_pro_baseball_draft", "route_id": "route_pro_baseball_standard", "order": 1, "name": "NPBドラフト指名 → 支配下選手契約締結", "description": "高校3年生・大学4年生・社会人野球/独立リーグ所属選手が対象。特定の年齢制限は見当たらない。", "rule_ids": ["rule_pro_baseball_1"] }
   ],
   "rules": [
     {
@@ -101,12 +103,13 @@
     {
       "id": "rule_boxer_4",
       "step_id": "step_boxer_license",
-      "description": "新規プロライセンス取得(新人)の標準ルートは年齢により閉じます。既にライセンスを持つ選手の継続を意味するものではありません。",
+      "description": "2023年7月19日、JBCは新規プロライセンス取得の37歳定年制を撤廃した。ENGINE.mdが指定する『35歳で新規ライセンス取得が閉じる』という境界は、この改正より前の情報であり、現在は年齢による正式な上限が見つからない状態に変わっている(堀江和也氏が37歳でデビューした実例がある)。",
       "age_condition": { "kind": "gte", "age": 35 },
-      "status": "ROUTE_CLOSED",
-      "expiry_type": "HARD",
-      "source_ids": ["src_engine_spec_boxer"],
-      "discovery_text": "この入口は閉じました"
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "source_ids": ["src_jbc_37_abolition", "src_horie_kazuya"],
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
     },
     {
       "id": "rule_sumo_1",
@@ -325,6 +328,17 @@
       "status": "OPEN",
       "expiry_type": "NO_UPPER_DEADLINE_FOUND",
       "source_ids": ["src_actor_no_license", "src_actor_labor_law_minors", "src_actor_lily_franky"],
+      "discovery_text": "年齢による正式な上限が見つかりません",
+      "caution_text": "締切がないことと簡単なことは別です"
+    },
+    {
+      "id": "rule_pro_baseball_1",
+      "step_id": "step_pro_baseball_draft",
+      "description": "NPBドラフト会議は、ドラフト翌年3月卒業見込みの高校3年生・大学4年生、および社会人野球・独立リーグ所属選手を対象とする。特定の年齢制限は見当たらない(J下部組織のような育成年代限定パイプラインとは異なり、社会人・独立リーグ経由であれば年齢を問わず資格対象になり得る)。",
+      "age_condition": { "kind": "any" },
+      "status": "OPEN",
+      "expiry_type": "NO_UPPER_DEADLINE_FOUND",
+      "source_ids": ["src_npb_draft"],
       "discovery_text": "年齢による正式な上限が見つかりません",
       "caution_text": "締切がないことと簡単なことは別です"
     }

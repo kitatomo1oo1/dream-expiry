@@ -8,5 +8,6 @@
   "shogi_player": ["src_shogi_shoreikai_rule"],
   "takarazuka_performer": ["src_takarazuka_2026_boshu"],
   "manga_artist": ["src_manga_no_license"],
-  "actor": ["src_actor_no_license"]
+  "actor": ["src_actor_no_license"],
+  "pro_baseball": ["src_npb_draft"]
 }

@@ -17,5 +17,13 @@
   { "id": "p_habu_yoshiharu", "name": "羽生善治", "occupation_id": "shogi_player", "summary": "19歳で竜王を初獲得、25歳で史上初の七冠独占、47歳で史上初の永世七冠を達成。", "source_ids": ["src_habu_yoshiharu"] },
   { "id": "p_kawahara_naoyuki", "name": "川原尚行", "occupation_id": "doctor", "summary": "外務省医務官を経て、40歳でNPO法人ロシナンテスを設立しスーダン等で医療支援活動。情熱大陸で特集された。", "source_ids": ["src_kawahara_naoyuki"] },
   { "id": "p_hachi_youtuber", "name": "葉一", "occupation_id": "youtuber", "summary": "27歳で教育系YouTubeチャンネルを開設。情熱大陸で特集された。", "source_ids": ["src_hachi_youtuber"] },
-  { "id": "p_dan_rei", "name": "檀れい", "occupation_id": "takarazuka_performer", "summary": "宝塚歌劇団星組娘役トップを経て退団、映画初出演で日本アカデミー賞主演女優賞と新人俳優賞を同時受賞。", "source_ids": ["src_dan_rei"] }
+  { "id": "p_dan_rei", "name": "檀れい", "occupation_id": "takarazuka_performer", "summary": "宝塚歌劇団星組娘役トップを経て退団、映画初出演で日本アカデミー賞主演女優賞と新人俳優賞を同時受賞。", "source_ids": ["src_dan_rei"] },
+  { "id": "p_inoue_naoya", "name": "井上尚弥", "occupation_id": "pro_boxer", "summary": "19歳でプロデビュー。29歳でアジア人初・軽量級初のバンタム級4団体統一を達成。", "source_ids": ["src_inoue_naoya"] },
+  { "id": "p_murata_ryota", "name": "村田諒太", "occupation_id": "pro_boxer", "summary": "26歳でロンドン五輪金メダル、31歳でプロ世界王座を獲得。五輪金とプロ世界王座を共に成し遂げた日本人初のボクサー。", "source_ids": ["src_murata_ryota"] },
+  { "id": "p_horie_kazuya", "name": "堀江和也", "occupation_id": "pro_boxer", "summary": "37歳定年制撤廃後、37歳でプロボクサーデビューした最初のケース。", "source_ids": ["src_horie_kazuya", "src_jbc_37_abolition"] },
+  { "id": "p_hakuho", "name": "白鵬翔", "occupation_id": "sumo_wrestler", "summary": "第69代横綱。幕内優勝45回(歴代最多)、横綱在位84場所(歴代最長)。", "source_ids": ["src_hakuho"] },
+  { "id": "p_tezuka_osamu", "name": "手塚治虫", "occupation_id": "manga_artist", "summary": "18歳でマンガ家デビュー。「マンガの神様」と称される。医師免許も保有。", "source_ids": ["src_tezuka_osamu"] },
+  { "id": "p_ichiro", "name": "イチロー", "occupation_id": "pro_baseball", "summary": "18歳でドラフト4位入団、27歳でメジャー移籍、45歳で引退。", "source_ids": ["src_ichiro"] },
+  { "id": "p_yamamoto_masa", "name": "山本昌", "occupation_id": "pro_baseball", "summary": "日本プロ野球史上唯一、50歳まで現役を続けた投手。", "source_ids": ["src_yamamoto_masa"] },
+  { "id": "p_shinjo_tsuyoshi", "name": "新庄剛志", "occupation_id": "pro_baseball", "summary": "18歳でプロ入り、引退から16年後に日本ハムファイターズ監督に就任。「記憶に残る選手」として愛される。", "source_ids": ["src_shinjo_tsuyoshi"] }
 ]

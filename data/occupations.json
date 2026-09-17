@@ -8,5 +8,6 @@
   { "id": "shogi_player", "dream_id": "dream_shogi_player", "name": "プロ棋士", "route_ids": ["route_shogi_shoreikai", "route_shogi_pro_exam"] },
   { "id": "takarazuka_performer", "dream_id": "dream_takarazuka_performer", "name": "宝塚歌劇団員", "route_ids": ["route_takarazuka_standard"] },
   { "id": "manga_artist", "dream_id": "dream_manga_artist", "name": "漫画家", "route_ids": ["route_manga_artist_standard"] },
-  { "id": "actor", "dream_id": "dream_actor", "name": "俳優", "route_ids": ["route_actor_standard"] }
+  { "id": "actor", "dream_id": "dream_actor", "name": "俳優", "route_ids": ["route_actor_standard"] },
+  { "id": "pro_baseball", "dream_id": "dream_pro_baseball", "name": "プロ野球選手", "route_ids": ["route_pro_baseball_standard"] }
 ]

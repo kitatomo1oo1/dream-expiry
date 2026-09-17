@@ -103,5 +103,10 @@
     "id": "air_traffic_controller",
     "dream_line": "研修・技能試験を経て航空管制官として発令",
     "state": "SEED_VERIFIED_2026"
+  },
+  {
+    "id": "pro_baseball",
+    "dream_line": "NPB球団との支配下選手契約締結",
+    "state": "SEED_VERIFIED"
   }
 ]

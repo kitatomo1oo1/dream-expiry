@@ -367,5 +367,185 @@
     "date_precision": "year",
     "description": "山田洋次監督『武士の一分』で映画初出演し、日本アカデミー賞優秀主演女優賞と新人俳優賞を同時受賞。",
     "source_ids": ["src_dan_rei"]
+  },
+  {
+    "id": "le_inoue_1",
+    "person_id": "p_inoue_naoya",
+    "type": "DREAM_LINE",
+    "date": "2012-10-02",
+    "date_precision": "day",
+    "description": "19歳、後楽園ホールでプロデビュー。同年のロンドン五輪アジア予選決勝で敗れ出場を逃した直後の転向だった。",
+    "source_ids": ["src_inoue_naoya"]
+  },
+  {
+    "id": "le_inoue_2",
+    "person_id": "p_inoue_naoya",
+    "type": "MILESTONE",
+    "date": "2022-12-13",
+    "date_precision": "day",
+    "description": "29歳、ポール・バトラーをKOし、バンタム級で世界史上9人目・アジア人初・軽量級初の4団体統一王者となった。",
+    "source_ids": ["src_inoue_naoya"]
+  },
+  {
+    "id": "le_murata_1",
+    "person_id": "p_murata_ryota",
+    "type": "MILESTONE",
+    "date": "2012",
+    "date_precision": "year",
+    "description": "26歳、ロンドン五輪ボクシングミドル級で金メダルを獲得。同年プロ転向を決めた。",
+    "source_ids": ["src_murata_ryota"]
+  },
+  {
+    "id": "le_murata_2",
+    "person_id": "p_murata_ryota",
+    "type": "SETBACK",
+    "date": "2017-05",
+    "date_precision": "month",
+    "description": "世界初挑戦でアッサン・エンダムに判定負け。",
+    "source_ids": ["src_murata_ryota"]
+  },
+  {
+    "id": "le_murata_3",
+    "person_id": "p_murata_ryota",
+    "type": "COMEBACK",
+    "date": "2017-10",
+    "date_precision": "month",
+    "description": "エンダムとの再戦を7回TKOで制し、31歳でWBA世界ミドル級王座を獲得。五輪金メダルとプロ世界王座を共に成し遂げた日本人初のボクサーとなった。",
+    "source_ids": ["src_murata_ryota"]
+  },
+  {
+    "id": "le_murata_4",
+    "person_id": "p_murata_ryota",
+    "type": "RETIREMENT",
+    "date": "2023-03-28",
+    "date_precision": "day",
+    "description": "37歳で現役引退を発表。",
+    "source_ids": ["src_murata_ryota"]
+  },
+  {
+    "id": "le_horie_1",
+    "person_id": "p_horie_kazuya",
+    "type": "DREAM_LINE",
+    "date": "2023-10-28",
+    "date_precision": "day",
+    "description": "37歳、後楽園ホールの前座試合でプロデビュー。同年7月のJBCによる37歳定年制撤廃後、初めて37歳を超えて新規デビューしたケースとして紹介されている。",
+    "source_ids": ["src_horie_kazuya", "src_jbc_37_abolition"]
+  },
+  {
+    "id": "le_hakuho_1",
+    "person_id": "p_hakuho",
+    "type": "DREAM_LINE",
+    "date": "2001",
+    "date_precision": "year",
+    "description": "2001年春場所、宮城野部屋から初土俵。",
+    "source_ids": ["src_hakuho"]
+  },
+  {
+    "id": "le_hakuho_2",
+    "person_id": "p_hakuho",
+    "type": "MILESTONE",
+    "date": "2007",
+    "date_precision": "year",
+    "description": "2007年夏場所後、22歳で第69代横綱に昇進。以後、幕内優勝45回(歴代最多)、通算1187勝、63連勝、横綱在位84場所(歴代最長)を記録し5つのギネス世界記録に認定された。",
+    "source_ids": ["src_hakuho"]
+  },
+  {
+    "id": "le_hakuho_3",
+    "person_id": "p_hakuho",
+    "type": "RETIREMENT",
+    "date": "2021-09",
+    "date_precision": "month",
+    "description": "2021年9月場所後に現役引退。",
+    "source_ids": ["src_hakuho"]
+  },
+  {
+    "id": "le_tezuka_1",
+    "person_id": "p_tezuka_osamu",
+    "type": "DREAM_LINE",
+    "date": "1946",
+    "date_precision": "year",
+    "description": "18歳、『マアチャンの日記帳』でマンガ家デビュー。",
+    "source_ids": ["src_tezuka_osamu"]
+  },
+  {
+    "id": "le_tezuka_2",
+    "person_id": "p_tezuka_osamu",
+    "type": "MILESTONE",
+    "date": "1951",
+    "date_precision": "year",
+    "description": "23歳、大阪帝国大学附属医学専門部を卒業し医師免許を取得。臨床医としては開業せず、漫画家業に専念した。",
+    "source_ids": ["src_tezuka_osamu"]
+  },
+  {
+    "id": "le_ichiro_1",
+    "person_id": "p_ichiro",
+    "type": "DREAM_LINE",
+    "date": "1991",
+    "date_precision": "year",
+    "description": "18歳、ドラフト4位でオリックスに入団。",
+    "source_ids": ["src_ichiro"]
+  },
+  {
+    "id": "le_ichiro_2",
+    "person_id": "p_ichiro",
+    "type": "CAREER_CHANGE",
+    "date": "2001",
+    "date_precision": "year",
+    "description": "27歳、マリナーズへ移籍しメジャーリーグデビュー。",
+    "source_ids": ["src_ichiro"]
+  },
+  {
+    "id": "le_ichiro_3",
+    "person_id": "p_ichiro",
+    "type": "RETIREMENT",
+    "date": "2019-03-21",
+    "date_precision": "day",
+    "description": "45歳、東京ドームでの試合後に現役引退を発表。",
+    "source_ids": ["src_ichiro"]
+  },
+  {
+    "id": "le_yamamoto_masa_1",
+    "person_id": "p_yamamoto_masa",
+    "type": "MILESTONE",
+    "date": "2014-09-05",
+    "date_precision": "day",
+    "description": "49歳0か月で最年長勝利を記録。",
+    "source_ids": ["src_yamamoto_masa"]
+  },
+  {
+    "id": "le_yamamoto_masa_2",
+    "person_id": "p_yamamoto_masa",
+    "type": "MILESTONE",
+    "date": "2015-10-07",
+    "date_precision": "day",
+    "description": "50歳2か月で最年長登板を記録。実働29年、日本プロ野球史上唯一の50歳現役投手となった。",
+    "source_ids": ["src_yamamoto_masa"]
+  },
+  {
+    "id": "le_shinjo_1",
+    "person_id": "p_shinjo_tsuyoshi",
+    "type": "DREAM_LINE",
+    "date": "1990",
+    "date_precision": "year",
+    "description": "18歳、ドラフト5位で阪神に入団。",
+    "source_ids": ["src_shinjo_tsuyoshi"]
+  },
+  {
+    "id": "le_shinjo_2",
+    "person_id": "p_shinjo_tsuyoshi",
+    "type": "RETIREMENT",
+    "date": "2006",
+    "date_precision": "year",
+    "description": "日本ハムの北海道移転後初のリーグ優勝・日本一を達成して現役引退。",
+    "source_ids": ["src_shinjo_tsuyoshi"]
+  },
+  {
+    "id": "le_shinjo_3",
+    "person_id": "p_shinjo_tsuyoshi",
+    "type": "COMEBACK",
+    "date": "2022-01-01",
+    "date_precision": "day",
+    "description": "引退から約16年後、日本ハムファイターズの監督に就任。",
+    "source_ids": ["src_shinjo_tsuyoshi"]
   }
 ]

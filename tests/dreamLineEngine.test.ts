@@ -29,7 +29,7 @@ describe("computeDiscoveries", () => {
 });
 
 describe("DreamLine と AFTER データ", () => {
-  it("全代表10夢にDREAM LINEの定義が存在する", () => {
+  it("全代表11夢にDREAM LINEの定義が存在する", () => {
     const representativeIds = [
       "doctor",
       "jra_jockey",
@@ -41,6 +41,7 @@ describe("DreamLine と AFTER データ", () => {
       "takarazuka_performer",
       "manga_artist",
       "actor",
+      "pro_baseball",
     ];
     for (const id of representativeIds) {
       const dreamLine = getDreamLine(ds, id);

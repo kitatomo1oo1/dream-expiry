@@ -6,10 +6,10 @@ describe("loadDataSet", () => {
     expect(() => loadDataSet()).not.toThrow();
   });
 
-  it("代表10夢すべてに occupation と route が存在する", () => {
+  it("代表11夢すべてに occupation と route が存在する", () => {
     const ds = loadDataSet();
     const representative = ds.dreams.filter((d) => d.is_representative);
-    expect(representative).toHaveLength(10);
+    expect(representative).toHaveLength(11);
     for (const dream of representative) {
       for (const occId of dream.occupation_ids) {
         const occ = ds.occupations.find((o) => o.id === occId);

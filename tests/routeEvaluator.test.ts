@@ -10,11 +10,13 @@ function statusOf(occupationId: string, age: number) {
 }
 
 describe("computeStandardRouteExpiryAge — 「賞味期限」見出し用の標準ルート閉鎖年齢", () => {
-  it("ENGINE.md必須境界と一致する(JRA20/Boxer35/Sumo24/宝塚20)", () => {
+  it("ENGINE.md必須境界と一致する(JRA20/Sumo24/宝塚20)", () => {
     expect(computeStandardRouteExpiryAge(ds, "jra_jockey", REF)).toBe(20);
-    expect(computeStandardRouteExpiryAge(ds, "pro_boxer", REF)).toBe(35);
     expect(computeStandardRouteExpiryAge(ds, "sumo_wrestler", REF)).toBe(24);
     expect(computeStandardRouteExpiryAge(ds, "takarazuka_performer", REF)).toBe(20);
+  });
+  it("プロボクサーは2023年7月のJBC制度改正(37歳定年制撤廃)によりnull(年齢上限が見つからない)", () => {
+    expect(computeStandardRouteExpiryAge(ds, "pro_boxer", REF)).toBeNull();
   });
   it("奨励会の年齢制限(30歳)と一致する(プロ編入試験という代替ルートの有無は考慮しない)", () => {
     expect(computeStandardRouteExpiryAge(ds, "shogi_player", REF)).toBe(30);
@@ -45,7 +47,7 @@ describe("JRA騎手 — ENGINE.md必須境界 (14 FUTURE / 15,19 CONDITIONAL / 2
   });
 });
 
-describe("プロボクサー — ENGINE.md必須境界 (16試験/試合分離, 17-34 conditional, 35 newcomer closed)", () => {
+describe("プロボクサー — 16試験/試合年齢分離、17-34 conditional、35歳以上は2023年のJBC制度改正でOPENに変わった", () => {
   it("16歳未満はFUTURE", () => {
     expect(statusOf("pro_boxer", 15)).toBe("FUTURE");
   });
@@ -56,8 +58,10 @@ describe("プロボクサー — ENGINE.md必須境界 (16試験/試合分離, 1
     expect(statusOf("pro_boxer", 17)).toBe("CONDITIONAL");
     expect(statusOf("pro_boxer", 34)).toBe("CONDITIONAL");
   });
-  it("35歳以上は新規ライセンス取得がROUTE_CLOSED", () => {
-    expect(statusOf("pro_boxer", 35)).toBe("ROUTE_CLOSED");
+  it("35歳以上は2023年7月のJBC制度改正(37歳定年制撤廃)によりOPEN(堀江和也氏の37歳デビュー実例あり)", () => {
+    const evaluation = evaluateOccupation(ds, "pro_boxer", 35, REF);
+    expect(evaluation.status).toBe("OPEN");
+    expect(evaluation.routes[0].steps[0].expiry_type).toBe("NO_UPPER_DEADLINE_FOUND");
   });
 });
 
@@ -96,8 +100,8 @@ describe("プロ棋士 — 標準ルート閉鎖後もプロ編入試験とい�
   });
 });
 
-describe("医師・漫画家・俳優 — 年齢による正式な上限が見つからない(NO_UPPER_DEADLINE_FOUND)", () => {
-  it.each(["doctor", "manga_artist", "actor"])("%s はどの年齢でもOPEN", (occId) => {
+describe("医師・漫画家・俳優・プロ野球選手 — 年齢による正式な上限が見つからない(NO_UPPER_DEADLINE_FOUND)", () => {
+  it.each(["doctor", "manga_artist", "actor", "pro_baseball"])("%s はどの年齢でもOPEN", (occId) => {
     expect(statusOf(occId, 5)).toBe("OPEN");
     expect(statusOf(occId, 60)).toBe("OPEN");
     expect(statusOf(occId, 100)).toBe("OPEN");

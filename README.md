@@ -9,7 +9,7 @@ IMAGINE → DISTANCE → DISCOVER → DREAM_LINE → AFTER → REFLECT
 - DREAM LINE後は実在人物の継続・引退・転身・挫折・復帰等(AFTER)を見る。最後に「夢とは何か」の答えを押し付けない(REFLECT)。
 - 禁止: 架空の成功率・難易度点・人生ランキング・年収による勝敗、UNKNOWNの0/false扱い、ROUTE_CLOSEDを「夢は不可能」と表示すること、年齢上限なし＝簡単という誤読。
 
-現在、代表10夢(医師/JRA騎手/プロボクサー/力士/プロサッカー選手/YouTuber/プロ棋士/宝塚歌劇団員/漫画家/俳優)についてIMAGINE〜REFLECTまでE2Eで遊べる。未検証・未実装の項目は [TODO_DATA.md](./TODO_DATA.md) を参照。
+現在、代表11夢(医師/JRA騎手/プロボクサー/力士/プロサッカー選手/YouTuber/プロ棋士/宝塚歌劇団員/漫画家/俳優/プロ野球選手)についてIMAGINE〜REFLECTまでE2Eで遊べる。未検証・未実装の項目は [TODO_DATA.md](./TODO_DATA.md) を参照。
 
 ## Architecture
 
