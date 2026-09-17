@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { loadDataSet } from "../src/data/loader";
-import { evaluateOccupation, computeStandardRouteExpiryAge } from "../src/engine/routeEvaluator";
+import { evaluateOccupation, computeStandardRouteExpiryAge, computeJourneyStory } from "../src/engine/routeEvaluator";
 
 const ds = loadDataSet();
 const REF = new Date("2026-09-17");
@@ -29,6 +29,47 @@ describe("computeStandardRouteExpiryAge — 「賞味期限」見出し用の標
     expect(computeStandardRouteExpiryAge(ds, "manga_artist", REF)).toBeNull();
     expect(computeStandardRouteExpiryAge(ds, "actor", REF)).toBeNull();
     expect(computeStandardRouteExpiryAge(ds, "youtuber", REF)).toBeNull();
+  });
+});
+
+describe("computeJourneyStory — 始点からDREAM LINEまで繋がった道筋", () => {
+  it("プロボクサー: 15歳から始めると16歳で挑めるようになる(標準ルートのみ、1ステップ)", () => {
+    const story = computeJourneyStory(ds, "pro_boxer", 15, REF);
+    expect(story.reachable).toBe(true);
+    expect(story.used_alternative).toBe(false);
+    expect(story.beats).toEqual([{ age: 16, step_name: "プロテスト受験・公式戦出場資格の取得", status: "CONDITIONAL" }]);
+  });
+
+  it("JRA騎手: 10歳から始めると15歳で入口が開く", () => {
+    const story = computeJourneyStory(ds, "jra_jockey", 10, REF);
+    expect(story.reachable).toBe(true);
+    expect(story.beats[0].age).toBe(15);
+    expect(story.beats[0].status).toBe("CONDITIONAL");
+  });
+
+  it("JRA騎手: 45歳から始めると代替ルートが無いため到達不可", () => {
+    const story = computeJourneyStory(ds, "jra_jockey", 45, REF);
+    expect(story.reachable).toBe(false);
+    expect(story.route_name).toBeNull();
+  });
+
+  it("力士: 30歳から始めると標準ルートは閉じているが、付出資格という代替ルートで到達できる", () => {
+    const story = computeJourneyStory(ds, "sumo_wrestler", 30, REF);
+    expect(story.reachable).toBe(true);
+    expect(story.used_alternative).toBe(true);
+    expect(story.route_name).toBe("代替ルート(有力アマチュア実績者の付出資格)");
+  });
+
+  it("プロ棋士: 35歳から始めると奨励会ルートは閉じているが、プロ編入試験で到達できる", () => {
+    const story = computeJourneyStory(ds, "shogi_player", 35, REF);
+    expect(story.reachable).toBe(true);
+    expect(story.used_alternative).toBe(true);
+  });
+
+  it("医師: 5歳から始めても、そもそも年齢による関門がないため即座に到達できる", () => {
+    const story = computeJourneyStory(ds, "doctor", 5, REF);
+    expect(story.reachable).toBe(true);
+    expect(story.beats).toEqual([{ age: 5, step_name: "医学部医学科卒業 → 医師国家試験合格 → 医籍登録", status: "OPEN" }]);
   });
 });
 

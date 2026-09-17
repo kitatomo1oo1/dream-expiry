@@ -1,9 +1,9 @@
 import { el } from "../dom";
 import type { Store } from "../../state";
 import type { DataSet, Occupation, Rule } from "../../types";
-import { evaluateOccupation, computeStandardRouteExpiryAge } from "../../engine/routeEvaluator";
-import { computeDiscoveries } from "../../engine/dreamLineEngine";
-import { statusLabel, expiryLabel } from "../labels";
+import { evaluateOccupation, computeStandardRouteExpiryAge, computeJourneyStory } from "../../engine/routeEvaluator";
+import { computeDiscoveries, getDreamLine } from "../../engine/dreamLineEngine";
+import { statusLabel, expiryLabel, buildJourneyNarrative } from "../labels";
 
 /** ルールの根拠となる出典のうち、最も確度が低いものを返す(近似値・要検証であることを隠さない)。 */
 function lowestConfidenceNote(ds: DataSet, rule: Rule | null): string | null {
@@ -91,7 +91,11 @@ export function renderAge(store: Store): HTMLElement {
   const backButton = el("button", { class: "btn-link", type: "button" }, ["← 戻る"]);
   backButton.addEventListener("click", () => store.setState({ phase: "dreamSelect" }));
 
-  const ageValue = el("p", { class: "age-value" }, [`${state.age}歳から目指す場合`]);
+  const ageValue = el("p", { class: "age-value" }, [
+    "あなたが",
+    el("span", { class: "age-value-number" }, [`${state.age}歳`]),
+    "から、この夢に挑むとしたら——",
+  ]);
 
   const boundaries = boundaryAges(ds, occupation);
   const datalistId = `age-ticks-${occupation.id}`;
@@ -141,8 +145,9 @@ export function renderAge(store: Store): HTMLElement {
     });
     for (const step of orderedSteps) {
       const stepDef = ds.steps.find((s) => s.id === step.step_id);
-      const contentChildren = [
-        el("h4", { class: "step-name" }, [stepDef?.name ?? step.step_id]),
+      const stepName = stepDef?.name ?? step.step_id;
+      const contentChildren: (Node | string)[] = [
+        el("p", { class: "step-name" }, [stepName]),
         el("span", { class: "step-status-label" }, [statusLabel(step.status)]),
         el("span", { class: "step-expiry-label" }, [expiryLabel(step.expiry_type)]),
       ];
@@ -173,16 +178,31 @@ export function renderAge(store: Store): HTMLElement {
     );
   }
 
+  const dreamLine = getDreamLine(ds, occupation.id);
+  const story = computeJourneyStory(ds, occupation.id, state.age);
+  const narrativeSentences = buildJourneyNarrative(story, state.age, dreamLine?.description ?? null);
+  const storySection = el(
+    "div",
+    { class: `story-section ${story.reachable ? "story-reachable" : "story-unreachable"}` },
+    narrativeSentences.map((sentence) => el("p", { class: "story-sentence" }, [sentence]))
+  );
+
+  const timelineDetails = el("details", { class: "timeline-details" }, [
+    el("summary", {}, ["経路の詳細を見る(出典・条件)"]),
+    timelineSection,
+  ]);
+
   const container = el("section", { class: "screen screen-age" }, [
     backButton,
     el("h2", {}, [dream?.name ?? occupation.name]),
     renderExpiryHeadline(ds, occupation.id),
     ageValue,
+    storySection,
     sliderHint,
     slider,
     datalist,
     tickRow,
-    timelineSection,
+    timelineDetails,
   ]);
 
   if (state.discoveries.length > 0) {

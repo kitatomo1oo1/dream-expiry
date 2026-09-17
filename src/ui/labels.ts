@@ -1,4 +1,4 @@
-import type { Status, ExpiryType, LifeEventType, DreamLineState } from "../types";
+import type { Status, ExpiryType, LifeEventType, DreamLineState, JourneyStory } from "../types";
 
 /** UI表示用の日本語ラベル。禁止事項(偽成功率・難易度点・人生ランキング)に該当しない、事実の状態説明のみを行う。 */
 
@@ -17,6 +17,75 @@ export function statusLabel(status: Status): string {
     case "UNKNOWN":
       return "未確認";
   }
+}
+
+/**
+ * ステータスを「あなた」を主人公にした一人称の物語として語る。
+ * 制度上のラベル(statusLabel/expiryLabel)だけでは、年齢スライダーを動かしても
+ * 「資格要件データベースのフラグが切り替わる」だけの体験になってしまう。
+ * ここでは同じ事実を、年齢を動かす行為そのものが「自分の人生を仮に生きてみる」
+ * ことだと感じられるよう、当事者目線の文章として組み立てる。
+ */
+export function narrativeLine(status: Status, age: number, stepName: string): string {
+  switch (status) {
+    case "OPEN":
+      return `${age}歳のあなたが今、${stepName}に挑むなら——その道はまだ開いています。`;
+    case "CONDITIONAL":
+      return `${age}歳のあなたは、${stepName}に挑めます。ただし、いくつかの条件が付きます。`;
+    case "FUTURE":
+      return `${age}歳のあなたには、${stepName}はまだ早すぎます。入口が開くのは、この先です。`;
+    case "ROUTE_CLOSED":
+      return `${age}歳のあなたが今、${stepName}を目指しても——この標準の道はすでに閉ざされています。`;
+    case "ALTERNATIVE_AVAILABLE":
+      return `${age}歳のあなたには、${stepName}という標準の道は閉ざされています。ただし、別の道が残っています。`;
+    case "UNKNOWN":
+      return `${age}歳のあなたが${stepName}に挑めるかどうかは、まだ確かめられていません。`;
+  }
+}
+
+/**
+ * 「賞味期限内であるからには、夢をかなえる道筋がある」という前提のもと、
+ * startAgeからDREAM LINEまでのJourneyStoryを、一連の物語として文章化する。
+ * 単発のStatus表示ではなく、次に何歳で何が起きて、最終的にどこへ辿り着くかを繋げる。
+ */
+export function buildJourneyNarrative(
+  story: JourneyStory,
+  startAge: number,
+  dreamLineDescription: string | null
+): string[] {
+  const sentences: string[] = [];
+
+  story.beats.forEach((beat, index) => {
+    if (story.used_alternative && index === story.standard_beats_count) {
+      sentences.push(`標準ルートはこの年齢では閉じていますが、${story.route_name}という別の入口が残っています。`);
+    }
+
+    const previousAge = index === 0 ? startAge : story.beats[index - 1].age;
+
+    if (index === 0) {
+      if (beat.age === startAge) {
+        sentences.push(`${startAge}歳の今、${beat.step_name}に挑めます。`);
+      } else {
+        sentences.push(
+          `${startAge}歳の今はまだ${beat.step_name}に挑めません。${beat.age}歳になれば、挑めるようになります。`
+        );
+      }
+    } else if (beat.age === previousAge) {
+      sentences.push(`同時に、${beat.step_name}にも挑めます。`);
+    } else {
+      sentences.push(`そこから${beat.age}歳で、${beat.step_name}に挑めます。`);
+    }
+  });
+
+  if (story.reachable && dreamLineDescription) {
+    sentences.push(`そして、${dreamLineDescription}という地点に辿り着きます。これが、${startAge}歳から始めるあなたの物語です。`);
+  } else if (!story.reachable && sentences.length === 0) {
+    sentences.push(`${startAge}歳の今、確認できている入口が見つかりません。`);
+  } else if (!story.reachable) {
+    sentences.push("そこから先は、確認できている入口が見つかりませんでした。");
+  }
+
+  return sentences;
 }
 
 export function expiryLabel(expiry: ExpiryType): string {

@@ -1,4 +1,4 @@
-import type { DataSet, OccupationEvaluation, RouteEvaluation, StepEvaluation, Status } from "../types";
+import type { DataSet, JourneyBeat, JourneyStory, OccupationEvaluation, RouteEvaluation, StepEvaluation, Status } from "../types";
 import { selectApplicableRule, STATUS_PRIORITY } from "./ruleEngine";
 
 function findStep(ds: DataSet, stepId: string) {
@@ -121,4 +121,91 @@ export function computeStandardRouteExpiryAge(
     }
   }
   return null;
+}
+
+/**
+ * ひとつのルート(Stepの列)を startAge から順に辿り、各Stepに「挑めるようになる年齢」を
+ * 特定して物語の一コマ(JourneyBeat)を積み上げる。あるStepがROUTE_CLOSEDならそこで
+ * 道は途切れる(呼び出し側が代替ルートへ切り替える)。
+ */
+function narrateRouteSteps(
+  ds: DataSet,
+  stepIds: string[],
+  startAge: number,
+  referenceDate: Date
+): { beats: JourneyBeat[]; ok: boolean } {
+  const orderedSteps = stepIds
+    .map((id) => findStep(ds, id))
+    .sort((a, b) => a.order - b.order);
+
+  const beats: JourneyBeat[] = [];
+  let age = startAge;
+  for (const step of orderedSteps) {
+    let evaluation = evaluateStep(ds, step.id, age, referenceDate);
+    while (evaluation.status === "FUTURE" && age < MAX_AGE_SCAN) {
+      age += 1;
+      evaluation = evaluateStep(ds, step.id, age, referenceDate);
+    }
+    if (evaluation.status === "ROUTE_CLOSED" || evaluation.status === "FUTURE") {
+      return { beats, ok: false };
+    }
+    beats.push({ age, step_name: step.name, status: evaluation.status });
+  }
+  return { beats, ok: true };
+}
+
+/**
+ * startAge からこの夢を目指した場合の「始点からDREAM LINEまでの道筋」を物語の
+ * コマとして返す。ユーザー要望: 「賞味期限内であるからには、夢をかなえる道筋がある」
+ * ——つまり単発のStatus表示ではなく、標準ルートが途中で閉じるなら代替ルートへ
+ * 自動的に切り替えて、最後まで辿り着けるかどうかを一連の流れとして示す。
+ */
+export function computeJourneyStory(
+  ds: DataSet,
+  occupationId: string,
+  startAge: number,
+  referenceDate: Date = new Date()
+): JourneyStory {
+  const occupation = ds.occupations.find((o) => o.id === occupationId);
+  if (!occupation) throw new Error(`Unknown occupation: ${occupationId}`);
+
+  const routes = occupation.route_ids.map((id) => findRoute(ds, id));
+  const standard = routes.find((r) => r.is_standard);
+  const alternatives = routes.filter((r) => !r.is_standard);
+
+  if (!standard) {
+    return { beats: [], reachable: false, route_name: null, used_alternative: false, standard_beats_count: 0 };
+  }
+
+  const standardResult = narrateRouteSteps(ds, standard.step_ids, startAge, referenceDate);
+  if (standardResult.ok) {
+    return {
+      beats: standardResult.beats,
+      reachable: true,
+      route_name: standard.name,
+      used_alternative: false,
+      standard_beats_count: standardResult.beats.length,
+    };
+  }
+
+  for (const alt of alternatives) {
+    const altResult = narrateRouteSteps(ds, alt.step_ids, startAge, referenceDate);
+    if (altResult.ok) {
+      return {
+        beats: [...standardResult.beats, ...altResult.beats],
+        reachable: true,
+        route_name: alt.name,
+        used_alternative: true,
+        standard_beats_count: standardResult.beats.length,
+      };
+    }
+  }
+
+  return {
+    beats: standardResult.beats,
+    reachable: false,
+    route_name: null,
+    used_alternative: false,
+    standard_beats_count: standardResult.beats.length,
+  };
 }

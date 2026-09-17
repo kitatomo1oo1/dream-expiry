@@ -177,6 +177,29 @@ export interface OccupationEvaluation {
   alternative_route: RouteEvaluation | null;
 }
 
+/**
+ * ある年齢から夢を目指した場合の、ひとつの Step に挑めるようになる時点を表す
+ * 「物語の一コマ」。年齢を1つの状態ラベルとしてではなく、始点からDREAM LINEまで
+ * つながった道筋として語るための単位。
+ */
+export interface JourneyBeat {
+  age: number;
+  step_name: string;
+  status: Status;
+}
+
+export interface JourneyStory {
+  beats: JourneyBeat[];
+  /** startAgeから、標準ルートまたは代替ルートのいずれかで最終的に辿り着けるか */
+  reachable: boolean;
+  /** 実際に辿り着けたルートの名前(標準/代替)。reachable=falseならnull */
+  route_name: string | null;
+  /** 代替ルートを経由して辿り着いた場合true(標準ルートは途中で閉じていたことを意味する) */
+  used_alternative: boolean;
+  /** beats のうち、先頭から何コマが標準ルート分か(残りは代替ルート分)。used_alternative=falseならbeats.length全体。 */
+  standard_beats_count: number;
+}
+
 export interface Discovery {
   rule_id: string;
   step_id: string;
