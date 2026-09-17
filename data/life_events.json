@@ -610,5 +610,41 @@
     "date_precision": "day",
     "description": "41歳、YS横浜(YSCC)でJリーグ初出場。ジーコが持つJリーグ最年長デビュー記録を更新した。",
     "source_ids": ["src_abiko_takamasa"]
+  },
+  {
+    "id": "le_endo_1",
+    "person_id": "p_endo_seidai",
+    "type": "MILESTONE",
+    "date": "2012",
+    "date_precision": "year",
+    "description": "日本大学在学時、全日本相撲選手権大会優勝(アマチュア横綱)と国体相撲成年個人の部A優勝(国体横綱)の2つのビッグタイトルを獲得。",
+    "source_ids": ["src_endo_seidai"]
+  },
+  {
+    "id": "le_endo_2",
+    "person_id": "p_endo_seidai",
+    "type": "DREAM_LINE",
+    "date": "2013-01",
+    "date_precision": "month",
+    "description": "22歳、標準ルート(新弟子検査)ではなく付出資格を用いて幕下10枚目格でデビュー。日本相撲協会への力士登録を果たした。",
+    "source_ids": ["src_endo_seidai"]
+  },
+  {
+    "id": "le_ichimura_1",
+    "person_id": "p_ichimura_noriki",
+    "type": "DREAM_LINE",
+    "date": "1982",
+    "date_precision": "year",
+    "description": "社会人野球(電電関東)出身、30歳4か月9日でドラフト3位指名。NPBドラフト史上最高齢指名(現在も記録)。",
+    "source_ids": ["src_ichimura_noriki"]
+  },
+  {
+    "id": "le_ichimura_2",
+    "person_id": "p_ichimura_noriki",
+    "type": "MILESTONE",
+    "date": "1983-04-09",
+    "date_precision": "day",
+    "description": "中日ドラゴンズで初登板。",
+    "source_ids": ["src_ichimura_noriki"]
   }
 ]

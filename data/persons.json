@@ -28,5 +28,7 @@
   { "id": "p_shinjo_tsuyoshi", "name": "新庄剛志", "occupation_id": "pro_baseball", "summary": "18歳でプロ入り、引退から16年後に日本ハムファイターズ監督に就任。「記憶に残る選手」として愛される。", "source_ids": ["src_shinjo_tsuyoshi"] },
   { "id": "p_fujita_nanako", "name": "藤田菜七子", "occupation_id": "jra_jockey", "summary": "18歳、JRA16年ぶりの女性騎手としてデビュー。女性騎手として初めてJRA重賞を制覇。", "source_ids": ["src_fujita_nanako"] },
   { "id": "p_shibata_yoshiomi", "name": "柴田善臣", "occupation_id": "jra_jockey", "summary": "JRA史上初の現役還暦(60歳)騎手。2026年9月、60歳で引退。JRA現役騎手の最高齢引退記録。", "source_ids": ["src_shibata_yoshiomi"] },
-  { "id": "p_abiko_takamasa", "name": "安彦考真", "occupation_id": "pro_footballer", "summary": "39歳で練習生、40歳で契約、41歳でJリーグデビュー。ジーコの最年長デビュー記録を更新。", "source_ids": ["src_abiko_takamasa"] }
+  { "id": "p_abiko_takamasa", "name": "安彦考真", "occupation_id": "pro_footballer", "summary": "39歳で練習生、40歳で契約、41歳でJリーグデビュー。ジーコの最年長デビュー記録を更新。", "source_ids": ["src_abiko_takamasa"] },
+  { "id": "p_endo_seidai", "name": "遠藤聖大", "occupation_id": "sumo_wrestler", "summary": "日本大学でアマチュア横綱・国体横綱を獲得し、22歳で幕下10枚目格付出デビュー。標準ルート閉鎖後の代替ルート(付出資格)の実例。", "source_ids": ["src_endo_seidai"] },
+  { "id": "p_ichimura_noriki", "name": "市村則紀", "occupation_id": "pro_baseball", "summary": "社会人野球出身、30歳4か月でドラフト指名。NPB史上最高齢指名記録(現在も記録)。", "source_ids": ["src_ichimura_noriki"] }
 ]
